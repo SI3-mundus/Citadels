@@ -59,7 +59,7 @@ public class Player {
     void construitquartier(){
         boolean exist=true;
         for(int i=0;i<quartierenmain.size();i++){
-            for(Quartiers.Quartier m:quartierenmain){
+            for(Quartiers.Quartier m:quartierconstruit){
                 if (quartierenmain.get(i)==m){
                     exist=false;
                     break;
@@ -79,16 +79,16 @@ public class Player {
     void action(List<Quartiers.Quartier> quartiers){
         Random n=new Random();
         if(quartiers.size()>0) {
-            if (quartierconstruit.size() + quartierenmain.size() < 7 && countquartier()<5) {
+            if (countquartier()<7) {
                 int s = n.nextInt(10);
-                if (s < 8) {
+                if (s < 7) {
                     get1Quartiers(quartiers);
                 } else {
                     addargent();
                 }
             } else {
                 int s = n.nextInt(10);
-                if (s < 8) {
+                if (s < 7) {
                     addargent();
                 } else {
                     get1Quartiers(quartiers);

@@ -20,25 +20,22 @@ public class Game {
     }
 
     String play(){
-        quar.shuffle();
-        System.out.println("treat1");
         boolean finish=false;
         while (finish==false){
             for(Player player:players){
                 player.action(quar.quartiers);
-                System.out.println("treat2");
+                player.construitquartier();
             }
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
                     finish=true;
+                    break;
                 }
             }
         }
-        System.out.println("treat3");
         for (Player player:players){
             player.countpoints();
         }
-        System.out.println("treat4");
         for(int i=0;i<players.size();i++){
             if (players.get(i).quartierconstruit.size()==7){
                 players.get(i).points=players.get(i).points+4;
@@ -50,10 +47,9 @@ public class Game {
                 break;
             }
         }
-        System.out.println("treat5");
 
         Player Winner=players.get(0).getWinner(players);
-        return Winner.toString();
+        return Winner.personnage.getName();
     }
 
     public static void main(String...args){
