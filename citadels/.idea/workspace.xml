@@ -29,7 +29,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Quartiers">
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="citadels.Game" />
+      <module name="citadels" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="citadels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Player" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="citadels.Player" />
       <module name="citadels" />
@@ -58,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game" />
         <item itemvalue="Application.Quartiers" />
         <item itemvalue="Application.Player" />
       </list>

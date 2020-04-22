@@ -1,19 +1,33 @@
 package citadels;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Player {
     Personnas.Personnage personnage;
     int argent;
-    List<Quartiers.Quartier> quartierenmain;
-    List<Quartiers.Quartier> quartierconstruit;
+    int points;
+    List<Quartiers.Quartier> quartierenmain=new ArrayList<>();;
+    List<Quartiers.Quartier> quartierconstruit=new ArrayList<>();;
     Player(Personnas.Personnage personae){
         this.argent=2;
+        this.points=0;
         this.personnage=personae;
-        List<Quartiers.Quartier> quartierenmain=new ArrayList<>();
-        List<Quartiers.Quartier> quartierconstruit=new ArrayList<>();
+    }
+
+    int countquartier(){
+        //count different quartier(has different name)
+        int i=0;
+        List<String> names=new ArrayList<>();
+        for(Quartiers.Quartier q:quartierenmain){
+            names.add(q.toString());
+        }
+        for(Quartiers.Quartier p:quartierconstruit){
+            names.add(p.toString());
+        }
+        Set<String> set=new HashSet<String>();
+        set.addAll(names);
+        i=set.size();
+        return i;
     }
 
     void addargent(){
@@ -22,18 +36,24 @@ public class Player {
 
     void get1Quartiers(List<Quartiers.Quartier> quartiers){
         List<Quartiers.Quartier> get2quartiers=new ArrayList<>();
-        Random number = new Random();
-        int a=number.nextInt(quartiers.size());
-        get2quartiers.add(quartiers.get(a));
-        quartiers.remove(a);
-        int b=number.nextInt(quartiers.size());
-        get2quartiers.add(quartiers.get(b));
-        quartiers.remove(b);
-        int c=number.nextInt(2);
-        Quartiers.Quartier selectquartier=get2quartiers.get(c);
-        get2quartiers.remove(c);
-        quartiers.add(get2quartiers.get(0));
-        quartierenmain.add(selectquartier);
+        if(quartiers.size()>0) {
+            Random number = new Random();
+            int a = number.nextInt(quartiers.size());
+            get2quartiers.add(quartiers.get(a));
+            quartiers.remove(a);
+            if (quartiers.size() > 0) {
+                int b = number.nextInt(quartiers.size());
+                get2quartiers.add(quartiers.get(b));
+                quartiers.remove(b);
+                int c = number.nextInt(2);
+                Quartiers.Quartier selectquartier = get2quartiers.get(c);
+                get2quartiers.remove(c);
+                quartiers.add(get2quartiers.get(0));
+                quartierenmain.add(selectquartier);
+            } else {
+                quartierenmain.add(get2quartiers.get(0));
+            }
+        }
     }
 
     void construitquartier(){
@@ -56,10 +76,67 @@ public class Player {
         }
     }
 
+    void action(List<Quartiers.Quartier> quartiers){
+        Random n=new Random();
+        if(quartiers.size()>0) {
+            if (quartierconstruit.size() + quartierenmain.size() < 7 && countquartier()<5) {
+                int s = n.nextInt(10);
+                if (s < 8) {
+                    get1Quartiers(quartiers);
+                } else {
+                    addargent();
+                }
+            } else {
+                int s = n.nextInt(10);
+                if (s < 8) {
+                    addargent();
+                } else {
+                    get1Quartiers(quartiers);
+                }
+            }
+        }else {addargent();}
+    }
+    void countpoints(){
+        for (Quartiers.Quartier quartier:quartierconstruit){
+            this.points=this.points+quartier.price;
+        }
+    }
+
+    Player getWinner(List<Player> players){
+        int max=players.get(0).points;
+        int position=0;
+        for(int m=1;m<players.size();m++){
+            if (max<players.get(m).points){
+                max=players.get(m).points;
+                position=m;
+            }
+        }
+        int same=0;
+        int[] location=new int[7];
+        for(int m=0;m<players.size();m++){
+            if(players.get(m).points==max){
+                location[same]=m;
+                same=same+1;
+
+            }
+        }
+        if(same==1){
+            return players.get(position);
+        }else {
+            for(int m:location){
+                if (players.get(position).personnage.getNumber()<players.get(m).personnage.getNumber()){
+                    position=m;
+                }
+            }
+            return players.get(position);
+        }
+    }
+
+
     public static void main(String...args){
         Player p=new Player(Personnas.Personnage.Condottiere);
         p.addargent();
-        System.out.println(p.personnage.getNumber());
+        System.out.println(p.quartierconstruit.size());
         System.out.println(p.argent);
     }
 

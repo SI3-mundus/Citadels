@@ -62,5 +62,9 @@ public class Quartiers {
         //System.out.println(q.quartiers.size()==65);
         //Personnas p=new Personnas();
         //System.out.println(p.personnas.toString());
+        Random random = new Random();
+        System.out.println(random.nextInt(0));
+        System.out.println(Quartier.Temple.ordinal());
+
     }
 }
