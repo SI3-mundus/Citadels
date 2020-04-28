@@ -18,6 +18,75 @@ public class Game {
             player.quartierenmain=quar.get4quartiers();
         }
     }
+    appelPersonages(){
+        int i=0;
+        int k=0;
+        while i<9{
+            i++;
+            switch(i){
+                case '1':
+                    for (Player player:players){
+                        if player.getNumber == 1{
+                            k=player.action_assassin();
+                        }
+                    }
+                    break;
+                case'2':
+                    for (Player player:players){
+                        if player.getNumber == 2 && player.getNumber != k{
+                            k=player.action_voleur();
+                        }
+                    }
+                    break;
+                case'3':
+                    for (Player player:players){
+                        if player.getNumber == 3 && player.getNumber != k{
+                            k=player.action_magicien();
+                        }
+                    }
+                    break;
+                case'4':
+                    for (Player player:players){
+                        if player.getNumber == 4 && player.getNumber != k{
+                            k=player.action_roi();
+                        }
+                    }
+                    break;
+                case '5':
+                    for (Player player:players){
+                        if player.getNumber == 5 && player.getNumber != k{
+                            k=player.action_bishop();
+                        }
+                    }
+                    break;
+                case'6':
+                    for (Player player:players){
+                        if player.getNumber == 6 && player.getNumber != k{
+                            k=player.action_marchant();
+                        }
+                    }
+                    break;
+                case'7':
+                    for (Player player:players){
+                        if player.getNumber == 7 && player.getNumber != k{
+                            k=player.action_architect();
+                        }
+                    }
+                    break;
+                case'8':
+                    for (Player player:players){
+                        if player.getNumber == 8 && player.getNumber != k{
+                            k=player.action_warlord();
+                        }
+                    }
+                    break;
+
+            }
+
+
+        }
+
+    }
 
     String play(){
         boolean finish=false;

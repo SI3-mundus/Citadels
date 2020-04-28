@@ -30,4 +30,17 @@ public class Personnas{
 
     void shuffle(){Collections.shuffle(personnas);}
 
+    int action_assassin(){
+        int max=8;
+        int min=2;
+        Random random = new Random();
+
+        int s = random.nextInt(max)%(max-min+1) + min;
+        return s;
+
+    }
+    action_bishop(){
+
+    }
+
 }
