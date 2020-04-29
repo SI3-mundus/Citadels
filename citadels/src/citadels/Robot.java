@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Robot extends Player{
 
-    Robot(Personnas.Personnage personae) {
+    Robot(Personnage.Personne personae) {
         super(personae);
     }
 
