@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Smart extends Player{
-    Smart(Personnage.Personne personae) {
-        super(personae);
+
+    Smart(Personnas.Personnage personage) {
+        super(personage);
     }
     @Override
     void action(List<Quartiers.Quartier> quartiers){
@@ -28,4 +29,6 @@ public class Smart extends Player{
             }
         }else {addargent();}
     }
+
+
 }

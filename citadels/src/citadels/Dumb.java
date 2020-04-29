@@ -4,16 +4,22 @@ import java.util.List;
 import java.util.Random;
 
 public class Dumb extends Player{
-    Dumb(Personnage.Personne personae) {
-        super(personae);
+
+    Dumb(Personnas.Personnage personage) {
+        super(personage);
     }
     @Override
     void action(List<Quartiers.Quartier> quartiers){
-        Random n=new Random();
         if(quartiers.size()>0) {
             if (countquartier()<7) {
-                    get1Quartiers(quartiers);
+                for(Quartiers.Quartier m : quartierenmain){
+                    if(argent>=m.price){
+                        get1Quartiers(quartiers);
+                        return;
+                    }
                 }
+                addargent();
+            }
         }else {addargent();}
     }
 }

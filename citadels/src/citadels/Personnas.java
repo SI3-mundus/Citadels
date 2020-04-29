@@ -19,6 +19,7 @@ public class Personnas{
         }
         int getNumber(){return number;}
         String getName(){return name;}
+
     }
 
     List<Personnage> personnas=new ArrayList<>();
@@ -27,20 +28,17 @@ public class Personnas{
             personnas.add(person);
         }
     }
+    List<Personnage> takeAway(int number){
+        List<Personnage> listPersonnageTakeAway=new ArrayList<>();
+        for(int i=0;i<number;i++){
+            listPersonnageTakeAway.add(personnas.get(0));
+            personnas.remove(0);
+        }
+        return listPersonnageTakeAway;
+    }
 
     void shuffle(){Collections.shuffle(personnas);}
 
-    int action_assassin(){
-        int max=8;
-        int min=2;
-        Random random = new Random();
 
-        int s = random.nextInt(max)%(max-min+1) + min;
-        return s;
-
-    }
-    action_bishop(){
-
-    }
 
 }

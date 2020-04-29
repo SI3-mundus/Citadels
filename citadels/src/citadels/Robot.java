@@ -5,14 +5,14 @@ import java.util.*;
 
 
 public class Robot extends Player{
+    int n =1;
 
-    Robot(Personnage.Personne personae) {
-        super(personae);
+    Robot(Personnas.Personnage personage) {
+        super(personage);
     }
 
     @Override
     void action(List<Quartiers.Quartier> quartiers){
-        int n =1;
         if(quartiers.size()>0) {
             if (countquartier()<7) {
                 if (n%2 == 0) {
@@ -24,5 +24,6 @@ public class Robot extends Player{
                 }
             }
         }else {addargent();}
+
     }
 }

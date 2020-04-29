@@ -34,15 +34,6 @@ public class Quartiers {
         int getPrice(){return price;}
     }
 
-    effect_universite(){players.get(i).points=players.get(i).points+8;}
-    effect_dracoport(){players.get(i).points=players.get(i).points+8;}
-    effect_bibliotheque(){List<Quartier> get2=new ArrayList<>();
-        for(int i=0;i<2;i++){
-            get4.add(quartiers.get(0));
-            quartiers.remove(0);
-        }
-        return get2;}
-
 
     List<Quartier> quartiers=new ArrayList<>();
     Quartiers(){
