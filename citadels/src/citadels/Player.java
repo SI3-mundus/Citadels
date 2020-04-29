@@ -63,7 +63,7 @@ public abstract class Player {
         }
     }
 
-    void construitquartier() {
+    Quartiers.Quartier construitquartier() {
         boolean exist = false;
         for (int i = 0; i < quartierenmain.size(); i++) {
             for (Quartiers.Quartier m : quartierconstruit) {
@@ -76,11 +76,13 @@ public abstract class Player {
                 if (this.argent >= quartierenmain.get(i).price) {
                     this.argent = this.argent - quartierenmain.get(i).price;
                     quartierconstruit.add(quartierenmain.get(i));
+                    Quartiers.Quartier a= quartierenmain.get(i);
                     quartierenmain.remove(i);
-                    return;
+                    return a;
                 }
             }
         }
+        return null;
     }
 
     abstract void action(List<Quartiers.Quartier> quartiers);
@@ -185,8 +187,8 @@ public abstract class Player {
 
     void action_roi(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         action(quartiers);
-        construitquartier();
-        if(quartierconstruit.get(quartierconstruit.size()-1).couleur=="jaune"){
+        Quartiers.Quartier construit=construitquartier();
+        if(construit.couleur=="jaune"){
             this.argent=this.argent+1;
         }
 
@@ -194,8 +196,8 @@ public abstract class Player {
 
     void action_eveque(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         action(quartiers);
-        construitquartier();
-        if(quartierconstruit.get(quartierconstruit.size()-1).couleur=="bleue"){
+        Quartiers.Quartier construit=construitquartier();
+        if(construit.couleur=="bleue"){
             this.argent=this.argent+1;
         }
     }
@@ -203,8 +205,8 @@ public abstract class Player {
     void action_marchant(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         this.argent=this.argent+1;
         action(quartiers);
-        construitquartier();
-        if(quartierconstruit.get(quartierconstruit.size()-1).couleur=="vert"){
+        Quartiers.Quartier construit=construitquartier();
+        if(construit.couleur=="vert"){
             this.argent=this.argent+1;
         }
     }
@@ -227,6 +229,7 @@ public abstract class Player {
 
     void action_condottiere(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         action(quartiers);
+        construitquartier();
         List<List<Quartiers.Quartier>> destroy=new ArrayList<>();
         for(Player p:list2){
             if(p.personnage!= Personnas.Personnage.Eveque){
