@@ -63,7 +63,7 @@ public abstract class Player {
         }
     }
 
-    Quartiers.Quartier construitquartier() {
+    void construitquartier() {
         boolean exist = false;
         for (int i = 0; i < quartierenmain.size(); i++) {
             for (Quartiers.Quartier m : quartierconstruit) {
@@ -76,13 +76,11 @@ public abstract class Player {
                 if (this.argent >= quartierenmain.get(i).price) {
                     this.argent = this.argent - quartierenmain.get(i).price;
                     quartierconstruit.add(quartierenmain.get(i));
-                    Quartiers.Quartier a= quartierenmain.get(i);
                     quartierenmain.remove(i);
-                    return a;
+                    return;
                 }
             }
         }
-        return null;
     }
 
     abstract void action(List<Quartiers.Quartier> quartiers);
@@ -187,28 +185,33 @@ public abstract class Player {
 
     void action_roi(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         action(quartiers);
-        Quartiers.Quartier construit=construitquartier();
-        if(construit.couleur=="jaune"){
-            this.argent=this.argent+1;
+        for (Quartiers.Quartier construit:this.quartierconstruit) {
+            if (construit.couleur == "jaune") {
+                this.argent = this.argent + 1;
+            }
         }
-
+        construitquartier();
     }
 
     void action_eveque(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         action(quartiers);
-        Quartiers.Quartier construit=construitquartier();
-        if(construit.couleur=="bleue"){
-            this.argent=this.argent+1;
+        for (Quartiers.Quartier construit:this.quartierconstruit) {
+            if (construit.couleur == "bleue") {
+                this.argent = this.argent + 1;
+            }
         }
+        construitquartier();
     }
 
     void action_marchant(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
         this.argent=this.argent+1;
         action(quartiers);
-        Quartiers.Quartier construit=construitquartier();
-        if(construit.couleur=="vert"){
-            this.argent=this.argent+1;
+        for (Quartiers.Quartier construit:this.quartierconstruit) {
+            if (construit.couleur == "vert") {
+                this.argent = this.argent + 1;
+            }
         }
+        construitquartier();
     }
 
     void action_architect(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers){
