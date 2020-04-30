@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="780edb81-2ae8-4d7a-9e8e-f36d2f888b11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/citadels/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/citadels.iml" beforeDir="false" afterPath="$PROJECT_DIR$/citadels.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DumbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/DumbTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/NormalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/NormalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PersonnasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SmartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/SmartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_quartier.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/test_quartier.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +32,20 @@
   <component name="ProjectId" id="1at7t2l9g2O86MnANpywIyVXmjc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="citadels" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\顾范岭\Documents\GitHub\Citadels\citadels\test\citadels" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
