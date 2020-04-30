@@ -134,8 +134,6 @@ public class Game {
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 7 && player.isKilled != true) {
                             player.action_architect(chooseList,players,quar.quartiers);
-                            player.action(quar.quartiers);
-                            player.construitquartier();
                             break;
                         }
                     }
@@ -144,8 +142,6 @@ public class Game {
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 8 && player.isKilled != true) {
                             player.action_condottiere(chooseList,players,quar.quartiers);
-                            player.action(quar.quartiers);
-                            player.construitquartier();
                             break;
                         }
                     }
