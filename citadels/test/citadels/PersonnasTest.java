@@ -17,7 +17,7 @@ public class PersonnasTest{
 
     @BeforeEach
     void setUp() {
-         Personnas person = new Personnas();
+         person = new Personnas();
     }
 
     @Test
@@ -26,19 +26,20 @@ public class PersonnasTest{
              ()->assertEquals(8,person.personnas.size()),
              ()->assertTrue(Assassin.equals(person.personnas.get(0)))
              );
-             }
+    }
 
     @Test
     void shuffle(){
             person.shuffle();
             assertFalse(Assassin.equals(person.personnas.get(0)));
-            }
+    }
 
     @Test
     void TakeAway(){
+        person.takeAway(2);
         assertAll(
-        ()->assertEquals(6,person.takeAway(2).size()),
+        ()->assertEquals(6,person.personnas.size()),
         ()->assertTrue(Magicien.equals(person.personnas.get(0)))
         );
-        }
-        }
+    }
+}

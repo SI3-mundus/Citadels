@@ -1,39 +1,40 @@
 package citadels;
 
-import citadels.Quartiers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static citadels.Quartiers.Quartier.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class test_quartier {
-    Quartiers q;
+class test_quartier {
+    private Quartiers q;
 
     @BeforeEach
     void setUp() {
-        Quartiers q = new Quartiers();
+        q = new Quartiers();
     }
     @Test
     void init(){
         assertAll(
-                ()->assertTrue(Temple.ordinal()==0),
-                ()-> assertTrue(Eglise.ordinal()==1),
-                ()-> assertTrue(Quartiers.Quartier.Palais.ordinal()==10)
+                ()-> assertEquals(0, Temple.ordinal()),
+                ()-> assertEquals(1, Eglise.ordinal()),
+                ()-> assertEquals(10, Palais.ordinal())
         );
 
     }
     @Test
     void testSize(){
-        Quartiers q = new Quartiers();
-        assertTrue(q.quartiers.size()==65);
+        assertEquals(65, q.quartiers.size());
     }
-//    @Test
-//    void getfourquartiers(Quartiers q){
-//        assertFalse( q.get4quartiers().isEmpty());
-//    }
+    @Test
+    void get4quartiers(){
+        assertFalse( q.get4quartiers().isEmpty());
+    }
+    @Test
+    void shuffle(){
+        q.shuffle();
+        assertNotSame(q.quartiers.get(0), Temple);
+    }
+
 }
