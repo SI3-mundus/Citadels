@@ -205,10 +205,12 @@ public class Game {
         if(round==1){
             System.out.println("Tour "+round+" start");
             for (Player player:players){
+                System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
                 System.out.println(player.personnage);
             }
             oneTour();
             for (Player player:players){
+                System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
                 System.out.println(player.quartierconstruit.size());
             }
             System.out.println("Tour "+round+" finish");
