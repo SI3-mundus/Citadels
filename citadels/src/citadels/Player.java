@@ -2,6 +2,8 @@ package citadels;
 
 import java.util.*;
 
+import static citadels.Quartiers.Quartier;
+
 public abstract class Player {
     Personnas.Personnage personnage;
     int argent;
@@ -19,6 +21,7 @@ public abstract class Player {
         this.points = 0;
         this.personnage = personage;
     }
+    int getArgent(){return argent;}
 
 
     int countquartier() {
@@ -87,10 +90,13 @@ public abstract class Player {
 
     void countpoints() {
         for (Quartiers.Quartier quartier : quartierconstruit) {
-            this.points = this.points + quartier.price;
+            if (quartier == Quartier.Dracoport) {
+                this.points = this.points + quartier.getPrice() + 2;
+            } else {
+                this.points = this.points + quartier.getPrice();
+            }
         }
     }
-
     Player getWinner(List<Player> players) {
         int max = players.get(0).points;
         int position = 0;
@@ -252,9 +258,9 @@ public abstract class Player {
         }
         if(destroy.get(s).get(x).price-1<=this.argent){
             for(Player p:list2){
-                if(p==destroy.get(s)){
+                if(p==destroy.get(s) ){
                     for(int i=0;i<p.quartierconstruit.size();i++){
-                        if(p.quartierconstruit.get(i)==destroy.get(s).get(x)){
+                        if(p.quartierconstruit.get(i)==destroy.get(s).get(x) && p.quartierconstruit.get(i) != Quartier.Donjon){
                             this.argent=this.argent-p.quartierconstruit.get(i).price+1;
                             p.quartierconstruit.remove(i);
                             break;

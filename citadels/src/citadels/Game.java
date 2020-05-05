@@ -85,6 +85,12 @@ public class Game {
                 case 1:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 1) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_assassin(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -93,6 +99,12 @@ public class Game {
                 case 2:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 2 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_voleur(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -101,6 +113,12 @@ public class Game {
                 case 3:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 3 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_magicien(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -109,6 +127,12 @@ public class Game {
                 case 4:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 4 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_roi(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -117,6 +141,12 @@ public class Game {
                 case 5:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 5 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_eveque(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -125,6 +155,12 @@ public class Game {
                 case 6:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 6 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_marchant(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -133,6 +169,12 @@ public class Game {
                 case 7:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 7 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_architect(chooseList,players,quar.quartiers);
                             break;
                         }
@@ -141,6 +183,12 @@ public class Game {
                 case 8:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 8 && player.isKilled != true) {
+                            for (int n=0;n<player.quartierconstruit.size();n++){
+                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+                                    player.quartierenmain.remove(0);
+                                    player.argent ++;
+                                }
+                            }
                             player.action_condottiere(chooseList,players,quar.quartiers);
                             break;
                         }
