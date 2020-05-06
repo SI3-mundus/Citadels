@@ -19,7 +19,6 @@ public class Game {
     public static void main(String...args){
         Game game=new Game();
         System.out.println(game.players.size()+" init");
-//        game.play();
         System.out.println(game.play());
     }
 
