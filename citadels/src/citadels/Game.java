@@ -113,6 +113,7 @@ public class Game {
                             }
                             //传递场上其他玩家到action里做判断
                             player.action_assassin(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("l'assassin a fini son tour.");
                             break;
                         }
                     }
@@ -133,6 +134,7 @@ public class Game {
                                 }
                             }
                             player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("le voleur a fini son tour.");
                             break;
                         }
                     }
@@ -153,6 +155,7 @@ public class Game {
                                 }
                             }
                             player.action_magicien(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("le magicien a fini son tour");
                             break;
                         }
                     }
@@ -173,6 +176,7 @@ public class Game {
                                 }
                             }
                             player.action_roi(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("le roi a fini son tour.");
                             break;
                         }
                     }
@@ -193,6 +197,7 @@ public class Game {
                                 }
                             }
                             player.action_eveque(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("l'eveque a fini son tour.");
                             break;
                         }
                     }
@@ -213,6 +218,7 @@ public class Game {
                                 }
                             }
                             player.action_marchant(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("le marchant a fini son tour.");
                             break;
                         }
                     }
@@ -233,6 +239,7 @@ public class Game {
                                 }
                             }
                             player.action_architect(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("l'architect a fini son tour");
                             break;
                         }
                     }
@@ -253,6 +260,7 @@ public class Game {
                                 }
                             }
                             player.action_condottiere(chooseList,players,quar.quartiers, otherPlayers);
+                            System.out.println("le condottiere a fini son tour");
                             break;
                         }
                     }

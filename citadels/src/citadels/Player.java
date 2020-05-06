@@ -224,7 +224,7 @@ public abstract class Player {
             //随机杀死一名角色 (不能根据情况选择杀死的玩家)
             if(j.personnage == list1.get(s) && j.personnage != Personnas.Personnage.Assassin){//这里是因为有一次我跑的时候刺客把自己杀死了 D:
                 j.isKilled=true;
-                System.out.println("Player: "+j.personnage.getName()+ " has been killed.");
+                System.out.println("Personage: "+j.personnage.getName()+ " has been killed.");
                 break;
             }
         }
