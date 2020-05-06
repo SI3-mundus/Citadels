@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Game {
-    List<Player> players=new ArrayList<>();
+    List<Player> players = new ArrayList<>();
     Quartiers quar=new Quartiers();
     int round=1;
     boolean finish=false;
@@ -14,6 +14,14 @@ public class Game {
     List<Personnas.Personnage> invisiblePersonage=new ArrayList<>();
     List<Personnas.Personnage> chooseList=new ArrayList<>();
     int playersnumber;
+
+    //  Main()
+    public static void main(String...args){
+        Game game=new Game();
+        System.out.println(game.players.size()+" init");
+//        game.play();
+        System.out.println(game.play());
+    }
 
     Game(){
         this.playersnumber=4;
@@ -27,7 +35,7 @@ public class Game {
             player.quartierenmain=quar.get4quartiers();
         }
     }
-
+    //国王是否可见
     boolean isRoisvisible(){
         boolean visible=false;
         for(int i=0;i<visiblePersonage.size();i++){
@@ -39,6 +47,7 @@ public class Game {
         return visible;
     }
 
+    //角色选择
     List<Personnas.Personnage> getPersonnagesPourChoisir(){
         Personnas personas=new Personnas();
         personas.shuffle();
@@ -68,6 +77,7 @@ public class Game {
         return ListeDePersonagePourChoisir;
     }
 
+    //分配角色
     List<Player> attribuerPersonnage(){
         if(players.size()<ListeDePersonagePourChoisir.size()){
             for (int i=0;i<players.size();i++){
@@ -78,20 +88,31 @@ public class Game {
     }
 
 
-
+    //一个游戏回合,依角色顺序循环
     void oneTour(){
         for (int i=1;i<9;i++) {
             switch (i) {
                 case 1:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 1) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+
+//                            这里我想的话,玩家的决策应该写到玩家的类里面，这个Game只是控制游戏流程不应该统一所有玩家的行为
+//                            其实这个角色的技能也应该放到每个玩家的类里面，因为每个难度的玩家对每个角色的用法都不一样.
+
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n) == Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_assassin(chooseList,players,quar.quartiers);
+                            //传递场上其他玩家到action里做判断
+                            player.action_assassin(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -99,13 +120,19 @@ public class Game {
                 case 2:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 2 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_voleur(chooseList,players,quar.quartiers);
+                            player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -113,13 +140,19 @@ public class Game {
                 case 3:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 3 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_magicien(chooseList,players,quar.quartiers);
+                            player.action_magicien(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -127,13 +160,19 @@ public class Game {
                 case 4:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 4 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_roi(chooseList,players,quar.quartiers);
+                            player.action_roi(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -141,13 +180,19 @@ public class Game {
                 case 5:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 5 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_eveque(chooseList,players,quar.quartiers);
+                            player.action_eveque(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -155,13 +200,19 @@ public class Game {
                 case 6:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 6 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_marchant(chooseList,players,quar.quartiers);
+                            player.action_marchant(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -169,13 +220,19 @@ public class Game {
                 case 7:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 7 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_architect(chooseList,players,quar.quartiers);
+                            player.action_architect(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -183,13 +240,19 @@ public class Game {
                 case 8:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 8 && player.isKilled != true) {
-                            for (int n=0;n<player.quartierconstruit.size();n++){
-                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-                                    player.quartierenmain.remove(0);
-                                    player.argent ++;
+//                            for (int n=0;n<player.quartierconstruit.size();n++){
+//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
+//                                    player.quartierenmain.remove(0);
+//                                    player.argent ++;
+//                                }
+//                            }
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
                                 }
                             }
-                            player.action_condottiere(chooseList,players,quar.quartiers);
+                            player.action_condottiere(chooseList,players,quar.quartiers, otherPlayers);
                             break;
                         }
                     }
@@ -203,13 +266,15 @@ public class Game {
 
     String play(){
         if(round==1){
-            System.out.println("Tour "+round+" start");
+            System.out.println("Game Start");
             for (Player player:players){
+//                玩家选择了这些角色（按顺序列出）
                 System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
                 System.out.println(player.personnage);
             }
             oneTour();
             for (Player player:players){
+//                每个玩家建造的建筑数量
                 System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
                 System.out.println(player.quartierconstruit.size());
             }
@@ -267,11 +332,5 @@ public class Game {
 
 
 
-    public static void main(String...args){
-        Game game=new Game();
-        System.out.println(game.players.size()+" init");
-        System.out.println("game start");
-        game.play();
-        System.out.println(game.play());
-    }
+
 }
