@@ -334,6 +334,7 @@ public class Game {
         }
 
         Player Winner=players.get(0).getWinner(players);
+        System.out.println("le joueur gagne est:");
         return Winner.personnage.getName();
     }
 
