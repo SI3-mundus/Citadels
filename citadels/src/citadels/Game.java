@@ -55,21 +55,21 @@ public class Game {
                 visiblePersonage=personas.takeAway(2);
                 invisiblePersonage=personas.takeAway(1);
                 ListeDePersonagePourChoisir=personas.personnas;
-                if(isRoisvisible()==true){getPersonnagesPourChoisir();}
+                if(isRoisvisible()){getPersonnagesPourChoisir();}
                 addChooseList();
                 break;
             case 5:
                 visiblePersonage=personas.takeAway(1);
                 invisiblePersonage=personas.takeAway(1);
                 ListeDePersonagePourChoisir=personas.personnas;
-                if(isRoisvisible()==true){getPersonnagesPourChoisir();}
+                if(isRoisvisible()){getPersonnagesPourChoisir();}
                 addChooseList();
                 break;
             case 6:
                 visiblePersonage=personas.takeAway(0);
                 invisiblePersonage=personas.takeAway(1);
                 ListeDePersonagePourChoisir=personas.personnas;
-                if(isRoisvisible()==true){getPersonnagesPourChoisir();}
+                if(isRoisvisible()){getPersonnagesPourChoisir();}
                 addChooseList();
                 break;
         }

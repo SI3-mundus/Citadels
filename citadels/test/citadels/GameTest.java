@@ -19,4 +19,14 @@ public class GameTest {
        game.visiblePersonage.add(Roi);
        assertEquals(true,game.isRoisvisible());
     }
+
+    @Test
+    void getPersonnagesPourChoisir(){
+        assertNotNull(game.getPersonnagesPourChoisir());
+    }
+
+    @Test
+    void attribuerPersonnage(){
+        assertNotNull(game.attribuerPersonnage());
+    }
 }
