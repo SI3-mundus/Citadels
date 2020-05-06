@@ -275,15 +275,15 @@ public class Game {
     String play(){
         if(round==1){
             System.out.println("Game Start");
+            System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
             for (Player player:players){
 //                玩家选择了这些角色（按顺序列出）
-                System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
                 System.out.println(player.personnage);
             }
             oneTour();
+            System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
             for (Player player:players){
 //                每个玩家建造的建筑数量
-                System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
                 System.out.println(player.quartierconstruit.size());
             }
             System.out.println("Tour "+round+" finish");
@@ -293,10 +293,12 @@ public class Game {
             System.out.println("Tour "+round+" start");
             getPersonnagesPourChoisir();
             attribuerPersonnage();
+            System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
             for (Player player:players){
                 System.out.println(player.personnage);
             }
             oneTour();
+            System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
             for (Player player:players){
                 System.out.println(player.quartierconstruit.size());
             }
