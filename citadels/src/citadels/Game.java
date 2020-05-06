@@ -105,6 +105,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("l'assassin a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -127,6 +128,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("le voleur a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -148,6 +150,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("le magicien a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -169,6 +172,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("le roi a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -190,6 +194,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("l'eveque a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -211,6 +216,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("le marchant a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -232,6 +238,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("l'architect a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
@@ -253,6 +260,7 @@ public class Game {
 //                                    player.argent ++;
 //                                }
 //                            }
+                            System.out.println("le cordittiere a commence son tour");
                             List<Player> otherPlayers = new ArrayList<>();
                             for (Player eachPlayer: players){
                                 if (eachPlayer != player){
