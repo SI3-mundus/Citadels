@@ -274,7 +274,7 @@ public abstract class Player {
             //Bound positive 报错
             if (this.quartierenmain.size() > 0 ){
                 n = random.nextInt(this.quartierenmain.size());
-            }
+            }else {n = 0;}
             for (int y=0;y<n;y++){
                 quartiers.add(this.quartierenmain.get(0));
                 this.quartierenmain.remove(0);
@@ -355,25 +355,21 @@ public abstract class Player {
         }
         //这里不能根据情况选择摧毁的建筑
         Random random=new Random();
-        //报错：Bound must be positive
         int s = random.nextInt(destroy.size());
         int x = 0;
-        //报错：Bound must be positive
         if (destroy.get(s).size() > 0) {
             x = random.nextInt(destroy.get(s).size());
         }
 
-        //报错：Index 0 out of bounds for length 0 : destroy.get(s).get(x)
         if (destroy.size() > 0 && destroy.get(s).size() > 0 && destroy.get(s).get(x) != null) {
 
 
             while (destroy.get(s).get(x).getPrice() - 1 > this.argent) {
-                s = random.nextInt(destroy.size());
-                //报错：Bound must be positive
-                x = 0 ;
-                if(destroy.get(s).size() > 0 ){
-                    x = random.nextInt(destroy.get(s).size());
+                while (destroy.get(s).size() <= 0) {
+                    s = random.nextInt(destroy.size());
                 }
+                x = 0 ;
+                x = random.nextInt(destroy.get(s).size());
             }
             if (destroy.get(s).get(x).getPrice() - 1 <= this.argent) {
                 for (Player p : list2) {

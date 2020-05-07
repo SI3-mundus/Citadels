@@ -134,6 +134,7 @@ public class Game {
                                     otherPlayers.add(eachPlayer);
                                 }
                             }
+//                            System.out.println("voleur fuck");
                             player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le voleur a fini son tour.");
                             break;
