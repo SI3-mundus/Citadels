@@ -240,8 +240,9 @@ public abstract class Player {
         Random random=new Random();
         int s = random.nextInt(list1.size());
         for(Player j:list2){
-            while (j.personnage != list1.get(s) || j.personnage == Personnas.Personnage.Assassin || j.isKilled == true){
+            while (j.personnage != list1.get(s)){
                 s = random.nextInt(list1.size());
+                if(j.personnage == Personnas.Personnage.Assassin || j.isKilled != true){break;}
             }
             if(j.personnage == list1.get(s) && j.personnage!= Personnas.Personnage.Assassin && j.isKilled != true){
                 this.argent=this.argent+j.argent;
