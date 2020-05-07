@@ -25,11 +25,11 @@ public class Normal extends Player{
                 if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
 
                     //如果自己身份是建筑师(如果玩家回合开始选择建筑师，肯定是想攒牌或建造)，则必定发动技能
-                    if (personnage == Personnas.Personnage.Architecte && quartiers.size()>=2) {
+                    if (personnage == Personnas.Personnage.Architecte) {
                         get2Quartiers(quartiers);
                     } else {
                         //如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌
-                        if (crntHandCards <= 1 && quartiers.size()>=2) {
+                        if (crntHandCards <= 1) {
                             get2Quartiers(quartiers);
                         } else {
                             //手牌>=2, 拿钱

@@ -17,21 +17,22 @@ public class Dumb extends Player{
         int crntMoney = argent; //金币
         int crntHandCards = availablenNumberofquartiersenmain(); //建筑手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数
-
+        System.out.println("FUCK"+crntHandCards);
+        System.out.println("FUCK2"+crntMoney);
         //2. 抽卡或金币阶段:
         if (quartiers.size() > 0) {
             if (countquartier() < 7) {
                 //有图书馆：但是选择要钱
 
-                    if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
+                if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
                     addargent();
-                    }else{
-                        if(crntHandCards <= 1) {
-                            get1Quartiers(quartiers);
-                        }else {
-                            addargent();
-                        }
+                }else{
+                    if(crntHandCards <= 1) {
+                        get1Quartiers(quartiers);
+                    }else {
+                        addargent();
                     }
+                }
             }
 
         } else {
