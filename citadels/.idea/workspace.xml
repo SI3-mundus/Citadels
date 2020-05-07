@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="68d72720-1070-43ed-98d6-7a040bdf9fb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Dumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Dumb.class" afterDir="false" />
@@ -14,6 +15,11 @@
       <change beforePath="$PROJECT_DIR$/src/citadels/Quartiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Quartiers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/citadels/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/citadels/Smart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Smart.java" afterDir="false" />
+=======
+    <list default="true" id="0ceaffe2-3c41-48b4-8ff0-48ea35247448" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" afterDir="false" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +27,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -35,13 +42,31 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
+=======
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="ProjectId" id="1bAv3CJ1dYm2MQbaRoNetfLJ0GM" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="citadels-master2" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Citadels-master2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="citadels" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\顾范岭\Documents\GitHub\Citadels\citadels\test\citadels" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\顾范岭\Documents\GitHub\Citadels\citadels\.idea" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -61,21 +86,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Quartiers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="citadels.Quartiers" />
-      <module name="citadels" />
+    <configuration name="DumbTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citadels-master" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="citadels" />
+      <option name="MAIN_CLASS_NAME" value="citadels.DumbTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="DumbTest.action" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="citadels" />
+=======
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citadels-master" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
@@ -90,8 +122,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="GameTest.attribuerPersonnage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="citadels" />
+=======
+    <configuration name="NormalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citadels-master" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
@@ -99,15 +136,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
+<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="citadels.GameTest" />
       <option name="METHOD_NAME" value="attribuerPersonnage" />
       <option name="TEST_OBJECT" value="method" />
+=======
+      <option name="MAIN_CLASS_NAME" value="citadels.NormalTest" />
+      <option name="TEST_OBJECT" value="class" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="GameTest.getPersonnagesPourChoisir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="citadels" />
+=======
+    <configuration name="PersonnasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Citadels-master" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
@@ -115,20 +162,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
+<<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="citadels.GameTest" />
       <option name="METHOD_NAME" value="getPersonnagesPourChoisir" />
       <option name="TEST_OBJECT" value="method" />
+=======
+      <option name="MAIN_CLASS_NAME" value="citadels.PersonnasTest" />
+      <option name="TEST_OBJECT" value="class" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Game" />
+      <item itemvalue="JUnit.PersonnasTest" />
+      <item itemvalue="JUnit.NormalTest" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.DumbTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
+<<<<<<< HEAD
         <item itemvalue="Application.Quartiers" />
         <item itemvalue="JUnit.GameTest.attribuerPersonnage" />
         <item itemvalue="JUnit.GameTest.getPersonnagesPourChoisir" />
         <item itemvalue="JUnit.DumbTest.action" />
+=======
+        <item itemvalue="JUnit.DumbTest" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.NormalTest" />
+        <item itemvalue="JUnit.PersonnasTest" />
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
       </list>
     </recent_temporary>
   </component>
@@ -137,6 +203,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="68d72720-1070-43ed-98d6-7a040bdf9fb5" name="Default Changelist" comment="" />
       <created>1588772075374</created>
       <option name="number" value="Default" />
@@ -166,4 +233,14 @@
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
+=======
+      <changelist id="0ceaffe2-3c41-48b4-8ff0-48ea35247448" name="Default Changelist" comment="" />
+      <created>1588087510479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588087510479</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> d7e940b60ec34ef99bd335668f2bc7513e276e75
 </project>
