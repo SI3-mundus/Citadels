@@ -21,6 +21,9 @@ public class Smart extends Player{
         int potentialPoints = countPotentialPoints(); //手牌潜在分数
         int playerTotalPoint = potentialPoints + crntPoint;
         int crntMaxTotalPoint = 0;
+        System.out.println("crntMoney "+ crntMoney);
+        System.out.println("crntHandCards "+crntHandCards);
+        System.out.println("crntBuildings "+crntBuildings);
 
             //找到最大分数值
         for (Player player: otherPlayer){
@@ -48,7 +51,7 @@ public class Smart extends Player{
                             get2Quartiers(quartiers);
                         }else{
                             //不是建筑师 -> 没有实验室：如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌
-                            if (crntHandCards <= 1){
+                            if (crntHandCards <= 1 || availablenNumberofquartiersenmain() < 1){
                                 get2Quartiers(quartiers);
                             }else{
                                 //手牌>=2, 拿钱
@@ -60,7 +63,7 @@ public class Smart extends Player{
                     // ** 这里如果加了其它的特殊卡，后面跟if就行了 **
                 }else{
                     //没有带被动技能的建筑
-                    if(crntHandCards<=1){
+                    if(crntHandCards <= 1 || availablenNumberofquartiersenmain() < 1){
                         get1Quartiers(quartiers);
                     }else{
                         addargent();
