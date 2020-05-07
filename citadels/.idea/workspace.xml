@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="780edb81-2ae8-4d7a-9e8e-f36d2f888b11" name="Default Changelist" comment="">
+    <list default="true" id="68d72720-1070-43ed-98d6-7a040bdf9fb5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Dumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Dumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Normal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Normal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/citadels/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/citadels/test_quartier.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/test_quartier.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/citadels/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/citadels/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Player.java" afterDir="false" />
->>>>>>> ad45f8f77fa8aa398d9e043455376b0fc502d926
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Quartiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Quartiers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Smart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Smart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Dumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Dumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Normal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Quartiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Quartiers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Smart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Smart.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,28 +21,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1at7t2l9g2O86MnANpywIyVXmjc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -52,18 +45,9 @@
     </key>
   </component>
   <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <option name="ruleStates" />
   </component>
-  <component name="RunManager" selected="JUnit.PersonnasTest.TakeAway">
+  <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="citadels.Game" />
       <module name="citadels" />
@@ -90,7 +74,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DumbTest.action" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="citadels" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="citadels.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="citadels" />
+      <option name="MAIN_CLASS_NAME" value="citadels.DumbTest" />
+      <option name="METHOD_NAME" value="action" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.attribuerPersonnage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="citadels" />
       <extension name="coverage">
         <pattern>
@@ -100,12 +100,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
       <option name="MAIN_CLASS_NAME" value="citadels.GameTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="attribuerPersonnage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonnasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.getPersonnagesPourChoisir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="citadels" />
       <extension name="coverage">
         <pattern>
@@ -114,23 +115,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
-      <option name="MAIN_CLASS_NAME" value="citadels.PersonnasTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonnasTest.TakeAway" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="citadels" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="citadels.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="citadels" />
-      <option name="MAIN_CLASS_NAME" value="citadels.PersonnasTest" />
-      <option name="METHOD_NAME" value="TakeAway" />
+      <option name="MAIN_CLASS_NAME" value="citadels.GameTest" />
+      <option name="METHOD_NAME" value="getPersonnagesPourChoisir" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonnasTest.TakeAway" />
-        <item itemvalue="JUnit.PersonnasTest" />
-        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.Quartiers" />
+        <item itemvalue="JUnit.GameTest.attribuerPersonnage" />
+        <item itemvalue="JUnit.GameTest.getPersonnagesPourChoisir" />
+        <item itemvalue="JUnit.DumbTest.action" />
       </list>
     </recent_temporary>
   </component>
@@ -151,12 +137,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="780edb81-2ae8-4d7a-9e8e-f36d2f888b11" name="Default Changelist" comment="" />
-      <created>1587543247875</created>
+      <changelist id="68d72720-1070-43ed-98d6-7a040bdf9fb5" name="Default Changelist" comment="" />
+      <created>1588772075374</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1587543247875</updated>
-      <workItem from="1588224281262" duration="730000" />
+      <updated>1588772075374</updated>
+      <workItem from="1588772079095" duration="2168000" />
+      <workItem from="1588808871812" duration="16857000" />
     </task>
     <servers />
   </component>
@@ -176,9 +163,7 @@
       </map>
     </option>
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/citadels$Game.ic" NAME="Game Coverage Results" MODIFIED="1588188012465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>citadels.*</FILTER>
-    </SUITE>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
