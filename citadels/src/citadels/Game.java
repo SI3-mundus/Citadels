@@ -138,7 +138,7 @@ public class Game {
                             player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le voleur a fini son tour.");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 3:
@@ -160,7 +160,7 @@ public class Game {
                             player.action_magicien(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le magicien a fini son tour");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 4:
@@ -182,7 +182,7 @@ public class Game {
                             player.action_roi(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le roi a fini son tour.");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 5:
@@ -204,7 +204,7 @@ public class Game {
                             player.action_eveque(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'eveque a fini son tour.");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 6:
@@ -226,7 +226,7 @@ public class Game {
                             player.action_marchant(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le marchant a fini son tour.");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 7:
@@ -248,7 +248,7 @@ public class Game {
                             player.action_architect(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'architect a fini son tour");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 case 8:
@@ -270,7 +270,7 @@ public class Game {
                             player.action_condottiere(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le condottiere a fini son tour");
                             break;
-                        }
+                        }else {player.isKilled=false;}
                     }
                     break;
                 default:
