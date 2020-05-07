@@ -354,39 +354,42 @@ public abstract class Player {
                 }
             }
         }
-        //这里不能根据情况选择摧毁的建筑
-        Random random=new Random();
-        int s = random.nextInt(destroy.size());
-        int x = 0;
-        if (destroy.get(s).size() > 0) {
-            x = random.nextInt(destroy.get(s).size());
-        }
-
-        if (destroy.size() > 0 && destroy.get(s).size() > 0 && destroy.get(s).get(x) != null) {
-
-
-            while (destroy.get(s).get(x).getPrice() - 1 > this.argent) {
-                while (destroy.get(s).size() <= 0) {
-                    s = random.nextInt(destroy.size());
+        List<int[]> ableToDestroy = new ArrayList<>();
+        for (int i = 0; i < destroy.size(); i++) {
+            for (int j =  0; j < destroy.get(i).size(); j++) {
+                if (destroy.get(i).get(j).getPrice() - 1 <= this.argent) {
+                    ableToDestroy.add(new int[]{i,j});
+//                    System.out.println(i+" "+j);
+                    break;
                 }
-                x = 0 ;
-                x = random.nextInt(destroy.get(s).size());
             }
-            if (destroy.get(s).get(x).getPrice() - 1 <= this.argent) {
-                for (Player p : list2) {
-                    if (p == destroy.get(s)) {
-                        for (int i = 0; i < p.quartierconstruit.size(); i++) {
-                            if (p.quartierconstruit.get(i) == destroy.get(s).get(x) && p.quartierconstruit.get(i) != Quartier.Donjon) {
-                                this.argent = this.argent - p.quartierconstruit.get(i).getPrice() + 1;
-                                p.quartierconstruit.remove(i);
-                                break;
+        }
+        if(ableToDestroy.size()!=0) {
+            //这里不能根据情况选择摧毁的建筑
+            Random random = new Random();
+            int k = random.nextInt(ableToDestroy.size());
+            int s = ableToDestroy.get(k)[0];
+            int x = ableToDestroy.get(k)[1];
+            if (destroy.get(s).size() > 0 && destroy.get(s).get(x) != null) {
+                if (destroy.get(s).get(x).getPrice() - 1 <= this.argent) {
+                    for (Player p : list2) {
+                        if (p.quartierconstruit == destroy.get(s)) {
+                            for (int i = 0; i < p.quartierconstruit.size(); i++) {
+                                if (p.quartierconstruit.get(i) == destroy.get(s).get(x) && p.quartierconstruit.get(i) != Quartier.Donjon) {
+                                    this.argent = this.argent - p.quartierconstruit.get(i).getPrice() + 1;
+//                                    System.out.println(p.quartierconstruit.get(i)+" has destroied");
+                                    p.quartierconstruit.remove(i);
+
+                                    break;
+                                }
                             }
+                            break;
                         }
-                        break;
                     }
                 }
-            }
 
+            }
         }
+
     }
 }
