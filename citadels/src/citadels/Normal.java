@@ -15,7 +15,7 @@ public class Normal extends Player{
         countpoints();
         int crntPoint = points; //分数
         int crntMoney = argent; //金币
-        int crntHandCards = quartierenmain.size(); //手牌数
+        int crntHandCards = availablenNumberofquartiersenmain(); //手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数
         if (countquartier() < 7) {
 

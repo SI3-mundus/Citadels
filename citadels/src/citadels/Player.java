@@ -392,4 +392,31 @@ public abstract class Player {
         }
 
     }
+    //可用建筑手牌数
+    int availablenNumberofquartiersenmain(){
+        List<String> construit = new ArrayList<>();
+        for (Quartiers.Quartier p : quartierconstruit) {
+            construit.add(p.toString());
+        }
+        Set<String> set1 = new HashSet<String>();
+        set1.addAll(construit);
+
+        List<String> main = new ArrayList<>();
+        for (Quartiers.Quartier q : quartierenmain) {
+            main.add(q.toString());
+        }
+        Set<String> set2 = new HashSet<String>();
+        set2.addAll(main);
+
+        int sizeUnusable=0;
+        for(String a:set2){
+            for(String b:set1){
+                if (a==b){
+                    sizeUnusable=sizeUnusable+1;
+                }
+            }
+        }
+
+        return set2.size()-sizeUnusable;
+    }
 }

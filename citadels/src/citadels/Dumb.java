@@ -15,7 +15,7 @@ public class Dumb extends Player{
         countpoints();
         int crntPoint = points; //分数
         int crntMoney = argent; //金币
-        int crntHandCards = quartierenmain.size(); //建筑手牌数
+        int crntHandCards = availablenNumberofquartiersenmain(); //建筑手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数
 
         //2. 抽卡或金币阶段:

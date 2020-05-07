@@ -77,5 +77,5 @@ public class Quartiers {
 //        Random random = new Random();
 //        System.out.println(random.nextInt(0));
 //        System.out.println(Quartier.Temple.ordinal());
-    }
+//   }
 }
