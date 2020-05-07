@@ -136,7 +136,7 @@ public abstract class Player {
             //循环拥有的建筑
             for (Quartiers.Quartier m : quartierconstruit) {
                 //如果已有相同建筑就break
-                if (quartierenmain.get(i) == m) {
+                if (quartierenmain.get(i).equals(m)) {
                     exist = true;
                     break;
                 }
