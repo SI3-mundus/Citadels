@@ -69,8 +69,8 @@ public class Quartiers {
         return get4;
     }
 
-    public static void main(String...args){
-        Quartiers q=new Quartiers();
+//     public static void main(String...args){
+//         Quartiers q=new Quartiers();
         //System.out.println(q.quartiers.size()==65);
         //Personnas p=new Personnas();
         //System.out.println(p.personnas.toString());
