@@ -60,6 +60,7 @@ public class Quartiers {
 
 //  返还四张建筑卡
     List<Quartier> get4quartiers(){
+        shuffle();
         List<Quartier> get4=new ArrayList<>();
         for(int i=0;i<4;i++){
             get4.add(quartiers.get(0));

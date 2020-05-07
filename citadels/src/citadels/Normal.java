@@ -21,32 +21,32 @@ public class Normal extends Player{
 
         //2. 抽卡或金币阶段(影响抽卡或拿金币的建筑被动技能):
             if (quartiers.size() > 0) {
+                //如果有图书馆：
+                if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
 
-                    //如果有图书馆：
-                    if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
-
-                        //如果自己身份是建筑师(如果玩家回合开始选择建筑师，肯定是想攒牌或建造)，则必定发动技能
-                        if (personnage == Personnas.Personnage.Architecte){
+                    //如果自己身份是建筑师(如果玩家回合开始选择建筑师，肯定是想攒牌或建造)，则必定发动技能
+                    if (personnage == Personnas.Personnage.Architecte && quartiers.size()>=2) {
+                        get2Quartiers(quartiers);
+                    } else {
+                        //如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌
+                        if (crntHandCards <= 1 && quartiers.size()>=2) {
                             get2Quartiers(quartiers);
-                        }else{
-                            //如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌
-                            if (crntHandCards <= 1){
-                                get2Quartiers(quartiers);
-                            }else{
-                                //手牌>=2, 拿钱
-                                addargent();
-                            }
-                        }
-
-                        // ** 这里如果加了其它的特殊卡，后面跟if就行了 **
-                    }else{
-                        //没有带被动技能的建筑
-                        if(crntHandCards<=1){
-                            get1Quartiers(quartiers);
-                        }else{
+                        } else {
+                            //手牌>=2, 拿钱
                             addargent();
                         }
                     }
+
+                    // ** 这里如果加了其它的特殊卡，后面跟if就行了 **
+                } else {
+                    //没有带被动技能的建筑
+                    if (crntHandCards <= 1) {
+                        get1Quartiers(quartiers);
+                    } else {
+                        addargent();
+                    }
+                }
+
 
             } else {
                 //如果建筑卡组已用完，则只加钱

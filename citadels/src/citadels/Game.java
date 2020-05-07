@@ -297,6 +297,7 @@ public class Game {
             System.out.println("Tour "+round+" finish");
         }
         while (!finish){
+
             round=round+1;
             System.out.println("Tour "+round+" start");
             getPersonnagesPourChoisir();

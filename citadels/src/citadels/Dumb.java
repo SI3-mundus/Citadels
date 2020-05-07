@@ -22,12 +22,18 @@ public class Dumb extends Player{
         if (quartiers.size() > 0) {
             if (countquartier() < 7) {
                 //有图书馆：但是选择要钱
-                if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
+
+                    if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
                     addargent();
-                }else{
-                    addargent();
-                }
+                    }else{
+                        if(crntHandCards <= 1) {
+                            get1Quartiers(quartiers);
+                        }else {
+                            addargent();
+                        }
+                    }
             }
+
         } else {
             //如果建筑卡组已用完，则只加钱
             addargent();

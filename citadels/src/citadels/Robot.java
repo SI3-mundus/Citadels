@@ -19,28 +19,27 @@ public class Robot extends Player{
         //2. 抽卡或金币阶段:
         if (quartiers.size() > 0) {
             if (countquartier() < 7) {
+                    //如果有图书馆：
+                    if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
 
-                //如果有图书馆：
-                if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
+                        //如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌,这个你们可以看情况改
+                        if (crntHandCards <= 1 && quartiers.size()>=2) {
+                            get2Quartiers(quartiers);
+                        } else {
+                            //手牌>=2, 拿钱
+                            addargent();
+                        }
 
-                    //如果缺建筑手牌(小于等于1),才选择发动技能拿2张牌,这个你们可以看情况改
-                    if (crntHandCards <= 1){
-                        get2Quartiers(quartiers);
-                    }else{
-                        //手牌>=2, 拿钱
-                        addargent();
-                    }
-
-                //这里如果加了其它的特殊卡，后面跟if就行了
-                }else{
-                    //没有带被动技能的建筑
-                    if(crntHandCards<=1){
-                        get1Quartiers(quartiers);
-                    }else{
-                        addargent();
+                        //这里如果加了其它的特殊卡，后面跟if就行了
+                    } else {
+                        //没有带被动技能的建筑
+                        if (crntHandCards <= 1) {
+                            get1Quartiers(quartiers);
+                        } else {
+                            addargent();
+                        }
                     }
                 }
-            }
         } else {
             //如果建筑卡组已用完，则只加钱
             addargent();
