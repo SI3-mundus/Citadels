@@ -26,16 +26,9 @@ public abstract class Player {
         this.personnage = personage;
     }
 
-    boolean verifyisRoi(){
-        if(this.personnage== Personnas.Personnage.Roi){
-            isRoilasttour=true;
-        }
-        return isRoilasttour;
-    }
-
 
     int countquartier() {
-        //count different quartier(has different name)
+        //count different quartier(has different name) set不重复
         int i = 0;
         List<String> names = new ArrayList<>();
         for (Quartiers.Quartier q : quartierenmain) {
@@ -64,7 +57,7 @@ public abstract class Player {
             Random number = new Random();
             int a = number.nextInt(quartiers.size());
             get2quartiers.add(quartiers.get(a));
-            quartiers.remove(a);//弃掉的牌用quartiers.add重新放回底层？
+            quartiers.remove(a);//在牌组中拿掉所抽取的牌
 
             if (quartiers.size() > 0) {
                 //抽第二张建筑卡 -> get2quartiers
@@ -124,16 +117,15 @@ public abstract class Player {
     //返还手牌里价值最低的一张卡的index
     int lowestPriceCardIndex(List<Quartiers.Quartier> handCards){
         if(handCards.size() > 0){
-            int temp = 10;
-            int result = 0;
-            for (int i = 0; i<handCards.size(); i++){
-                if(handCards.get(i).getPrice() <= temp){
-                    result = i;
+            int lowestIndex = 0;
+            for (int i = 0; i<handCards.size() && i!=lowestIndex; i++){
+                if(handCards.get(i).getPrice()<handCards.get(lowestIndex).getprice()){
+                    lowestIndex = i;
                 }
             }
-            return result;
+            return lowestIndex;
         }else{
-            return  0;
+            return -1;
         }
     }
 
