@@ -86,10 +86,14 @@ public class Game {
         }else {return null;}
     }
 
-
-    //一个游戏回合,依角色顺序循环
     void oneTour(){
         for (int i=1;i<9;i++) {
+            callPersonnage(i);
+        }
+    }
+
+    //一个游戏回合,依角色顺序循环
+    void callPersonnage(int i){
             switch (i) {
                 case 1:
                     for (Player player : players) {

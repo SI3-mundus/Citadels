@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ceaffe2-3c41-48b4-8ff0-48ea35247448" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/GameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/citadels/citadels/GameTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/PersonnasTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/citadels/citadels/PersonnasTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/citadels/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/citadels/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Game.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
