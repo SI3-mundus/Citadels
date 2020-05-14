@@ -43,7 +43,7 @@ public class GameTest {
 
     @Test
     void attribuerPersonnage(){
-        assertNotNull(game.attribuerPersonnage());
+        assertNotNull(game.choisirPersonnage());
     }
     @Test
     void callPesonnage(){

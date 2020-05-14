@@ -29,10 +29,17 @@ public class Game {
         players.add(new Dumb(ListeDePersonagePourChoisir.get(1)));
         players.add(new Smart(ListeDePersonagePourChoisir.get(2)));
         players.add(new Smart(ListeDePersonagePourChoisir.get(3)));
+        players.get(0).isRoilasttour=true;
         quar.shuffle();
         for (Player player:players){
             player.quartierenmain=quar.get4quartiers();
         }
+        for(Player player:players){
+            if(player.personnage== Personnas.Personnage.Roi){
+                player.isRoilasttour=true;
+            }
+        }
+
     }
     //国王是否可见
     boolean isRoisvisible(){
@@ -45,6 +52,7 @@ public class Game {
         }
         return visible;
     }
+
 
     //角色选择
     List<Personnas.Personnage> getPersonnagesPourChoisir(){
@@ -76,15 +84,50 @@ public class Game {
         return ListeDePersonagePourChoisir;
     }
 
-    //分配角色
-    List<Player> attribuerPersonnage(){
+    //决定谁是下一轮第一选角色的
+    void deciderquiRoi(){
+        boolean existedRoi=false;
+        for(Player p:players){
+            if(p.personnage== Personnas.Personnage.Roi){
+                existedRoi=true;
+                break;
+            }
+        }
+        if(existedRoi=true){
+            for(Player p:players){
+                if(p.personnage== Personnas.Personnage.Roi){
+                    p.isRoilasttour=true;
+                }else {
+                    p.isRoilasttour=false;
+                }
+            }
+        }
+    }
+
+    //分配角色,从上一轮的roi开始选
+    List<Player> choisirPersonnage(){
         if(players.size()<ListeDePersonagePourChoisir.size()){
+            int a=0;
             for (int i=0;i<players.size();i++){
-                players.get(i).personnage=ListeDePersonagePourChoisir.get(i);
+                if(players.get(i).isRoilasttour==true){
+                    players.get(i).personnage=ListeDePersonagePourChoisir.get(0);
+                }else {a=a+1;}
+                break;
+            }
+            int b=1;
+            for (int i=0;i<players.size();i++){
+                if(i!=a){
+                    players.get(i).personnage=ListeDePersonagePourChoisir.get(b);
+                    b=b+1;
+                }
             }
             return players;
-        }else {return null;}
+        }else {
+            return null;
+        }
     }
+
+
 
     void oneTour(){
         for (int i=1;i<9;i++) {
@@ -304,8 +347,9 @@ public class Game {
 
             round=round+1;
             System.out.println("Tour "+round+" start");
+            deciderquiRoi();
             getPersonnagesPourChoisir();
-            attribuerPersonnage();
+            choisirPersonnage();
             System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
             for (Player player:players){
                 System.out.println(player.personnage);
