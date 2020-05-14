@@ -26,6 +26,13 @@ public abstract class Player {
         this.personnage = personage;
     }
 
+    boolean verifyisRoi(){
+        if(this.personnage== Personnas.Personnage.Roi){
+            isRoilasttour=true;
+        }
+        return isRoilasttour;
+    }
+
 
     int countquartier() {
         //count different quartier(has different name)

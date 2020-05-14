@@ -2,16 +2,28 @@ package citadels;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import static citadels.Personnas.Personnage.*;
 
 public class GameTest {
     Game game;
+    ArrayList<Player> playersdemo=new ArrayList<Player>();
 
     @BeforeEach
     void setUp() {
         game = new Game();
+
+    }
+
+    @Test
+    void constructor(){
+        assertEquals(4,game.playersnumber);
+        assertEquals(4,game.players.get(0).quartierenmain.size());
+        assertNotEquals(2,game.players.get(2).quartierenmain.size());
     }
 
     @Test
@@ -32,5 +44,18 @@ public class GameTest {
     @Test
     void attribuerPersonnage(){
         assertNotNull(game.attribuerPersonnage());
+    }
+    @Test
+    void callPesonnage(){
+        game.players.clear();
+        game.players.add(new Dumb(Assassin));
+        game.players.add(new Dumb(Voleur));
+        game.players.add(new Dumb(Magicien));
+        game.players.add(new Dumb(Roi));
+        game.players.add(new Dumb(Eveque));
+        game.players.add(new Dumb(Marchand));
+        game.players.add(new Dumb(Architecte));
+        game.players.add(new Dumb(Condottiere));
+        
     }
 }
