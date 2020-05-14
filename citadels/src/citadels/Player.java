@@ -10,6 +10,7 @@ public abstract class Player {
     int points;
     boolean isKilled;
     boolean isStolen;
+    boolean isRoilasttour;
 //    建筑卡手牌
     List<Quartiers.Quartier> quartierenmain = new ArrayList<>();
 //    已买下的建筑
@@ -17,6 +18,7 @@ public abstract class Player {
 
 
     Player(Personnas.Personnage personage) {
+        this.isRoilasttour=false;
         this.isKilled=false;
         this.isStolen=false;
         this.argent = 2;

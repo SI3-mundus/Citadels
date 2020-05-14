@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0ceaffe2-3c41-48b4-8ff0-48ea35247448" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Normal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/DumbTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/NormalTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/RobotTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/SmartTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/citadels/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/citadels/citadels/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/GameTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/citadels/citadels/GameTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/citadels/citadels/PersonnasTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/citadels/citadels/PersonnasTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/citadels/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/citadels/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/citadels/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/citadels/PersonnasTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="JUnit.PersonnasTest">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="citadels.Game" />
       <module name="citadels" />
@@ -85,7 +83,7 @@
       </method>
     </configuration>
     <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Citadels-master" />
+      <module name="citadels" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
@@ -94,7 +92,9 @@
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
       <option name="MAIN_CLASS_NAME" value="citadels.GameTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,7 +115,7 @@
       </method>
     </configuration>
     <configuration name="PersonnasTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Citadels-master" />
+      <module name="citadels" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="citadels.*" />
@@ -124,7 +124,9 @@
       </extension>
       <option name="PACKAGE_NAME" value="citadels" />
       <option name="MAIN_CLASS_NAME" value="citadels.PersonnasTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,11 +140,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonnasTest" />
+        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="Application.Game" />
         <item itemvalue="JUnit.DumbTest" />
-        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.NormalTest" />
-        <item itemvalue="JUnit.PersonnasTest" />
       </list>
     </recent_temporary>
   </component>

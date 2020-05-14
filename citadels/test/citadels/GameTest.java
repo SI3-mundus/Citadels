@@ -22,7 +22,11 @@ public class GameTest {
 
     @Test
     void getPersonnagesPourChoisir(){
+        game.getPersonnagesPourChoisir();
         assertNotNull(game.getPersonnagesPourChoisir());
+        assertEquals(2,game.visiblePersonage.size());
+        assertEquals(1,game.invisiblePersonage.size());
+        assertTrue(!game.visiblePersonage.contains(Personnas.Personnage.Roi));
     }
 
     @Test
