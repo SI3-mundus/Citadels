@@ -135,6 +135,16 @@ public class Game {
         }
     }
 
+    List<Player> getOtherPlayers(Player player){
+        List<Player> otherPlayers = new ArrayList<>();
+        for (Player eachPlayer: players){
+            if (eachPlayer != player){
+                otherPlayers.add(eachPlayer);
+            }
+        }
+        return otherPlayers;
+    }
+
     //一个游戏回合,依角色顺序循环
     void callPersonnage(int i){
             switch (i) {
@@ -152,12 +162,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'assassin a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             //传递场上其他玩家到action里做判断
                             player.action_assassin(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'assassin a fini son tour.");
@@ -175,12 +180,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le voleur a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
 //                            System.out.println("voleur fuck");
                             player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le voleur a fini son tour.");
@@ -198,12 +198,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le magicien a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_magicien(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le magicien a fini son tour");
                             break;
@@ -220,12 +215,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le roi a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_roi(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le roi a fini son tour.");
                             break;
@@ -242,12 +232,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'eveque a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_eveque(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'eveque a fini son tour.");
                             break;
@@ -264,12 +249,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le marchant a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_marchant(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le marchant a fini son tour.");
                             break;
@@ -286,12 +266,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'architect a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_architect(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'architect a fini son tour");
                             break;
@@ -308,12 +283,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le cordittiere a commence son tour");
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer: players){
-                                if (eachPlayer != player){
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
+                            List<Player> otherPlayers = getOtherPlayers(player);
                             player.action_condottiere(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le condottiere a fini son tour");
                             break;
