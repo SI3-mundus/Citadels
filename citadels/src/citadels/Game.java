@@ -280,7 +280,7 @@ public class Game {
                 default:
                     System.exit(2);
             }
-        }
+        
     }
 
 
