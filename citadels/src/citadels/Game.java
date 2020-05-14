@@ -26,8 +26,8 @@ public class Game {
         this.playersnumber=4;
         getPersonnagesPourChoisir();
         players.add(new Dumb(ListeDePersonagePourChoisir.get(0)));
-        players.add(new Robot(ListeDePersonagePourChoisir.get(1)));
-        players.add(new Normal(ListeDePersonagePourChoisir.get(2)));
+        players.add(new Dumb(ListeDePersonagePourChoisir.get(1)));
+        players.add(new Smart(ListeDePersonagePourChoisir.get(2)));
         players.add(new Smart(ListeDePersonagePourChoisir.get(3)));
         quar.shuffle();
         for (Player player:players){
