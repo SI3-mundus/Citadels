@@ -342,10 +342,6 @@ public class Game {
 
     //  判断胜负 （全局判断应该写到Game里面）
     int getWinnerPosition() {
-        for (Player player:players){
-            System.out.println("the current point is");
-            System.out.println(player.countpoints());
-        }
         for(int i=0;i<players.size();i++){
             if (players.get(i).quartierconstruit.size()==7){
                 players.get(i).points=players.get(i).points+4;
@@ -357,37 +353,25 @@ public class Game {
                 break;
             }
         }
+
+        for (Player player:players){
+            System.out.println("the current point is");
+            System.out.println(player.countpoints());
+        }
         int max = players.get(0).points;
         int position = 0;
         for (int m = 0; m < players.size(); m++) {
             if (max < players.get(m).points) {
                 max = players.get(m).points;
                 position = m;
-            }
-        }
-        int same = 0;
-        //最多8个玩家
-        int[] location = new int[7];
-        for (int m = 0; m < players.size(); m++) {
-            if (players.get(m).points == max) {
-                location[same] = m;
-                same = same + 1;
-
-            }
-        }
-        if (same == 1) {
-            return position;
-        } else {
-            //如果有两个或以上相同最高分
-            for (int m : location) {
-                if (players.get(position).personnage.getNumber() < players.get(m).personnage.getNumber()) {
-                    //则赢家为角色number大的
-                    position = m;
+            }else if(max==players.get(m).points){
+                if(players.get(position).personnage.getNumber()<players.get(m).personnage.getNumber()){
+                    position=m;
                 }
             }
-
-            return position;
         }
+
+        return position;
     }
 
     void addChooseList(){
