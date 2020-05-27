@@ -375,7 +375,7 @@ public class Game {
             for (Player player:players){
                 System.out.println("le nombre est:");
                 System.out.println(player.quartierconstruit.size());
-                System.out.println("les quartiers sont:")
+                System.out.println("les quartiers sont:");
                 for (int i = 0; i < player.quartierconstruit.size(); i++) {
                     System.out.println(player.quartierconstruit.get(i));
                 }
