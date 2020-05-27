@@ -135,16 +135,6 @@ public class Game {
         }
     }
 
-    List<Player> getOtherPlayers(Player player){
-        List<Player> otherPlayers = new ArrayList<>();
-        for (Player eachPlayer: players){
-            if (eachPlayer != player){
-                otherPlayers.add(eachPlayer);
-            }
-        }
-        return otherPlayers;
-    }
-
     //一个游戏回合,依角色顺序循环
     void callPersonnage(int i){
             switch (i) {
@@ -162,7 +152,12 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'assassin a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             //传递场上其他玩家到action里做判断
                             player.action_assassin(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'assassin a fini son tour.");
@@ -180,12 +175,19 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le voleur a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
 //                            System.out.println("voleur fuck");
                             player.action_voleur(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le voleur a fini son tour.");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("le voleur a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 3:
@@ -198,11 +200,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le magicien a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_magicien(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le magicien a fini son tour");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("le magicien a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 4:
@@ -215,11 +224,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le roi a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_roi(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le roi a fini son tour.");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("le roi a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 5:
@@ -232,11 +248,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'eveque a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_eveque(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'eveque a fini son tour.");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("l'eveque a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 6:
@@ -249,11 +272,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le marchant a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_marchant(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le marchant a fini son tour.");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("le marchant a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 7:
@@ -266,11 +296,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("l'architect a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_architect(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("l'architect a fini son tour");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("l'architect' a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 case 8:
@@ -283,11 +320,18 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le cordittiere a commence son tour");
-                            List<Player> otherPlayers = getOtherPlayers(player);
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer: players){
+                                if (eachPlayer != player){
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
                             player.action_condottiere(chooseList,players,quar.quartiers, otherPlayers);
                             System.out.println("le condottiere a fini son tour");
                             break;
-                        }else {player.isKilled=false;}
+                        }else {
+                            System.out.println("le condottiere a ete tue");
+                            player.isKilled=false;}
                     }
                     break;
                 default:
@@ -300,6 +344,7 @@ public class Game {
     String play(){
         if(round==1){
             System.out.println("Game Start");
+            System.out.println("Les quatre jouers sont Dumb1, Dumb2, Smart1 et Smart2");
             System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
             for (Player player:players){
 //                玩家选择了这些角色（按顺序列出）
@@ -329,6 +374,12 @@ public class Game {
             for (Player player:players){
                 System.out.println(player.quartierconstruit.size());
             }
+            System.out.println("les quartiers que chaqun a construit est:");
+            for (Player player:players) {
+                for (int i = 0; i < player.quartierconstruit.size(); i++) {
+                    System.out.println(player.quartierconstruit.get(i));
+                }
+            }
             System.out.println("Tour "+round+" finish");
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
@@ -338,7 +389,8 @@ public class Game {
             }
         }
         for (Player player:players){
-            player.countpoints();
+            System.out.println("the current point is");
+            System.out.println(player.countpoints());
         }
         for(int i=0;i<players.size();i++){
             if (players.get(i).quartierconstruit.size()==7){

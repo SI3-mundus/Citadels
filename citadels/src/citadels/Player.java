@@ -26,9 +26,16 @@ public abstract class Player {
         this.personnage = personage;
     }
 
+    boolean verifyisRoi(){
+        if(this.personnage== Personnas.Personnage.Roi){
+            isRoilasttour=true;
+        }
+        return isRoilasttour;
+    }
+
 
     int countquartier() {
-        //count different quartier(has different name) set不重复
+        //count different quartier(has different name)
         int i = 0;
         List<String> names = new ArrayList<>();
         for (Quartiers.Quartier q : quartierenmain) {
@@ -57,7 +64,7 @@ public abstract class Player {
             Random number = new Random();
             int a = number.nextInt(quartiers.size());
             get2quartiers.add(quartiers.get(a));
-            quartiers.remove(a);//在牌组中拿掉所抽取的牌
+            quartiers.remove(a);//弃掉的牌用quartiers.add重新放回底层？
 
             if (quartiers.size() > 0) {
                 //抽第二张建筑卡 -> get2quartiers
@@ -72,12 +79,17 @@ public abstract class Player {
                 //另一张放回卡组
                 quartiers.add(get2quartiers.get(0));
                 quartierenmain.add(selectquartier);
+                System.out.println("Player: " + personnage.getName() + " picked one building card.");
+                System.out.println("the chosen quartier is " + selectquartier);
             } else {
-                quartierenmain.add(get2quartiers.get(0));
+                Quartiers.Quartier selectquartier = get2quartiers.get(0);
+                quartierenmain.add(selectquartier);
+                System.out.println("Player: " + personnage.getName() + " picked one building card.");
+                System.out.println("the chosen quartier is " + selectquartier);
             }
 
         }
-        System.out.println("Player: " + personnage.getName() + " picked one building card.");
+
     }
 
     //有图书馆时获得两张建筑卡
@@ -105,27 +117,30 @@ public abstract class Player {
 
     //实验室的技能：选择一张卡放回卡组，然后金币加一
     void laboratoire_ability(List<Quartiers.Quartier> quartiers, int index){
+        System.out.println("the ability of the lab is activated");
         if(index >= 0){
             quartiers.add(quartierenmain.get(index));
             quartierenmain.remove(index);
             argent ++;
         }else{
             System.out.println("Index can't be smaller than 0");
+            System.out.println("activation failed");
         }
     }
 
     //返还手牌里价值最低的一张卡的index
     int lowestPriceCardIndex(List<Quartiers.Quartier> handCards){
         if(handCards.size() > 0){
-            int lowestIndex = 0;
-            for (int i = 0; i<handCards.size() && i!=lowestIndex; i++){
-                if(handCards.get(i).getPrice()<handCards.get(lowestIndex).getprice()){
-                    lowestIndex = i;
+            int temp = 10;
+            int result = 0;
+            for (int i = 0; i<handCards.size(); i++){
+                if(handCards.get(i).getPrice() <= temp){
+                    result = i;
                 }
             }
-            return lowestIndex;
+            return result;
         }else{
-            return -1;
+            return  0;
         }
     }
 
@@ -146,6 +161,7 @@ public abstract class Player {
                 if (this.argent >= quartierenmain.get(i).getPrice()) {
                     this.argent = this.argent - quartierenmain.get(i).getPrice();
                     quartierconstruit.add(quartierenmain.get(i));
+                    System.out.println("the player chose to build this quartier:" + quartierenmain.get(i));
                     quartierenmain.remove(i);
                     return;
                 }
@@ -158,7 +174,7 @@ public abstract class Player {
     abstract void action(List<Quartiers.Quartier> quartiers, List<Player> otherPlayers);
 
 //    计算分数
-    void countpoints() {
+    int countpoints() {
         for (Quartiers.Quartier quartier : quartierconstruit) {
             if (quartier == Quartier.Dracoport) {
                 this.points = this.points + quartier.getPrice() + 2;
@@ -166,6 +182,7 @@ public abstract class Player {
                 this.points = this.points + quartier.getPrice();
             }
         }
+        return points;
     }
 //    如果手中的牌全部建造的分数(不加已有分数)
     int countPotentialPoints(){
@@ -225,7 +242,7 @@ public abstract class Player {
             //随机杀死一名角色 (不能根据情况选择杀死的玩家)
             if(j.personnage == list1.get(s) && j.personnage != Personnas.Personnage.Assassin){//这里是因为有一次我跑的时候刺客把自己杀死了 D:
                 j.isKilled=true;
-                System.out.println("Personage: "+j.personnage.getName()+ " has been killed.");
+//                System.out.println("Personage: "+j.personnage.getName()+ " has been killed.");
                 break;
             }
         }
