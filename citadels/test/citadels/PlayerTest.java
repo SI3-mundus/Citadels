@@ -3,11 +3,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-public class PlayerTest {
+public class  PlayerTest {
     private static final Dumb dumb1= new Dumb(Personnas.Personnage.Assassin);
     private static final Dumb dumb2= new Dumb(Personnas.Personnage.Roi);
     private static final Smart smart1= new Smart(Personnas.Personnage.Magicien);
     private static final Smart smart2= new Smart(Personnas.Personnage.Marchand);
+    private static final Quartiers.Quartier quartier1= Quartiers.Quartier.Taverne;
+    private static final Quartiers.Quartier quartier2= Quartiers.Quartier.Marche;
+    private static final Quartiers.Quartier quartier3= Quartiers.Quartier.Caserne;
+    private static final Quartiers.Quartier quartier4= Quartiers.Quartier.Manufacture;
     private Quartiers q;
 
     @Test
@@ -66,13 +70,12 @@ public class PlayerTest {
     }
     @Test
     void construitQuartier(){
-        q= new Quartiers();
-        smart1.quartierenmain = q.get4quartiers();
-        System.out.println(smart1.quartierenmain);
+        smart1.quartierenmain.add(quartier1);
         smart1.construitquartier();
-        smart1.addargent();
-        smart1.construitquartier();
-        System.out.println(smart1.quartierconstruit);
+        assertTrue(smart1.quartierconstruit.size()==1);
+        smart2.quartierenmain.add(quartier4);
+        smart2.construitquartier();
+        assertTrue(smart2.quartierconstruit.size()==0);
     }
     @Test
     void avaliableQuartier(){
