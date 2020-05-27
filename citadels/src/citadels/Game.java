@@ -181,6 +181,7 @@ public class Game {
 //                                }
 //                            }
                             System.out.println("le voleur a commence son tour");
+<<<<<<< HEAD
 
                             player.action_voleur(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le voleur a fini son tour.");
@@ -188,8 +189,24 @@ public class Game {
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
                             player.isKilled=false;}
+=======
+                            List<Player> otherPlayers = new ArrayList<>();
+                            for (Player eachPlayer : players) {
+                                if (eachPlayer != player) {
+                                    otherPlayers.add(eachPlayer);
+                                }
+                            }
+//                            System.out.println("voleur fuck");
+                            player.action_voleur(chooseList, players, quar.quartiers, otherPlayers);
+                            System.out.println("le voleur a fini son tour.");
+                            break;
+                        } else if (player.personnage.getNumber() == 2 && player.isKilled == true) {
+                            System.out.println("le voleur a ete tue");
+                            player.isKilled = false;
+                        }
+                        break;
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                     }
-                    break;
                 case 3:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 3 && !player.isKilled) {
@@ -204,8 +221,13 @@ public class Game {
                             player.action_magicien(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le magicien a fini son tour");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 3 && player.isKilled == true){
+                            System.out.println("le magicien a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -223,8 +245,13 @@ public class Game {
                             player.action_roi(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le roi a fini son tour.");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 4 && player.isKilled == true){
+                            System.out.println("le roi a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -242,8 +269,13 @@ public class Game {
                             player.action_eveque(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("l'eveque a fini son tour.");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 5 && player.isKilled == true){
+                            System.out.println("l'eveque a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -261,8 +293,13 @@ public class Game {
                             player.action_marchant(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le marchant a fini son tour.");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 6 && player.isKilled == true){
+                            System.out.println("le marchant a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -280,8 +317,13 @@ public class Game {
                             player.action_architect(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("l'architect a fini son tour");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 7 && player.isKilled == true){
+                            System.out.println("l'architect' a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -299,8 +341,13 @@ public class Game {
                             player.action_condottiere(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le condottiere a fini son tour");
                             break;
+<<<<<<< HEAD
                         }else if(player.isKilled){
                             System.out.println("Il a ete tue");
+=======
+                        }else if (player.personnage.getNumber() == 8 && player.isKilled == true){
+                            System.out.println("le condottiere a ete tue");
+>>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
@@ -342,16 +389,16 @@ public class Game {
                 System.out.println(player.personnage);
             }
             oneTour();
-            System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
+            System.out.println("Les quartiers construit par chaque joueurs sont:");
             for (Player player:players){
+                System.out.println("le nombre est:");
                 System.out.println(player.quartierconstruit.size());
-            }
-            System.out.println("les quartiers que chaqun a construit est:");
-            for (Player player:players) {
+                System.out.println("les quartiers sont:");
                 for (int i = 0; i < player.quartierconstruit.size(); i++) {
                     System.out.println(player.quartierconstruit.get(i));
                 }
             }
+           
             System.out.println("Tour "+round+" finish");
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
