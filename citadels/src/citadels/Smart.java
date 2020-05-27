@@ -21,9 +21,9 @@ public class Smart extends Player{
         int potentialPoints = countPotentialPoints(); //手牌潜在分数
         int playerTotalPoint = potentialPoints + crntPoint;
         int crntMaxTotalPoint = 0;
-        System.out.println("crntMoney "+ crntMoney);
-        System.out.println("crntHandCards "+crntHandCards);
-        System.out.println("crntBuildings "+crntBuildings);
+//        System.out.println("crntMoney "+ crntMoney);
+//        System.out.println("crntHandCards "+crntHandCards);
+//        System.out.println("crntBuildings "+crntBuildings);
 
             //找到最大分数值
         for (Player player: otherPlayer){

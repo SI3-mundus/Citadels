@@ -17,21 +17,22 @@ public class Dumb extends Player{
         int crntMoney = argent; //金币
         int crntHandCards = availablenNumberofquartiersenmain(); //建筑手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数
-        System.out.println("crntMoney "+ crntMoney);
-        System.out.println("crntHandCards "+crntHandCards);
-        System.out.println("crntBuildings "+crntBuildings);
-
+//        System.out.println("crntMoney "+ crntMoney);
+//        System.out.println("crntHandCards "+crntHandCards);
+//        System.out.println("crntBuildings "+crntBuildings);
         //2. 抽卡或金币阶段:
         if (quartiers.size() > 0) {
             if (countquartier() < 7) {
                 //有图书馆：但是选择要钱
 
                 if (quartierconstruit.contains(Quartiers.Quartier.Bibliotheque)) {
+                    System.out.println("Il ne choisit pas un comportement particulier.");
                     addargent();
                 }else{
                     if(crntHandCards <= 1 || availablenNumberofquartiersenmain() < 1) {
                         get1Quartiers(quartiers);
                     }else {
+                        System.out.println("Il ne choisit pas un comportement particulier.");
                         addargent();
                     }
 
@@ -40,6 +41,7 @@ public class Dumb extends Player{
 
         } else {
             //如果建筑卡组已用完，则只加钱
+            System.out.println("Il ne choisit pas un comportement particulier.");
             addargent();
         }
 

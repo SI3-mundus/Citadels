@@ -52,7 +52,7 @@ public abstract class Player {
 
     void addargent() {
         this.argent += 2;
-        System.out.println("Player: " + personnage.getName() + " added 2 gold.");
+        System.out.println( "Il a choisi deux pièces d'or.");
     }
 
     //获得一张建筑卡
@@ -79,13 +79,13 @@ public abstract class Player {
                 //另一张放回卡组
                 quartiers.add(get2quartiers.get(0));
                 quartierenmain.add(selectquartier);
-                System.out.println("Player: " + personnage.getName() + " picked one building card.");
-                System.out.println("the chosen quartier is " + selectquartier);
+                System.out.println("Il a choisi une carte de construction.");
+                System.out.println("La carte qu'il a choisie est: " + selectquartier);
             } else {
                 Quartiers.Quartier selectquartier = get2quartiers.get(0);
                 quartierenmain.add(selectquartier);
-                System.out.println("Player: " + personnage.getName() + " picked one building card.");
-                System.out.println("the chosen quartier is " + selectquartier);
+                System.out.println("Il a choisi une carte de construction.");
+                System.out.println("La carte qu'il a choisie est: " + selectquartier);
             }
 
         }
@@ -112,6 +112,8 @@ public abstract class Player {
             }
             quartierenmain.add(get2quartiers.get(0));
             quartierenmain.add(get2quartiers.get(1));
+            System.out.println("Il a choisi deux cartes de construction.");
+            System.out.println("La carte qu'il a choisie est: " + get2quartiers.get(0)+" et "+get2quartiers.get(1));
         }
     }
 
