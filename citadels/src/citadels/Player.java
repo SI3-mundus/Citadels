@@ -9,6 +9,7 @@ public abstract class Player {
     Personnas.Personnage personnage;
     int argent;//钱
     int points;
+    int currentpoints;
     boolean isKilled;
     boolean isStolen;
     boolean isRoilasttour;
@@ -181,13 +182,24 @@ public abstract class Player {
 //    计算分数
     int countpoints() {
         for (Quartiers.Quartier quartier : quartierconstruit) {
-            if (quartier == Quartier.Dracoport) {
+            if (quartier == Quartier.Dracoport||quartier==Quartier.Universite) {
                 this.points = this.points + quartier.getPrice() + 2;
             } else {
                 this.points = this.points + quartier.getPrice();
             }
         }
         return points;
+    }
+    //    计算分数
+    int countcurrentpoints() {
+        for (Quartiers.Quartier quartier : quartierconstruit) {
+            if (quartier == Quartier.Dracoport||quartier==Quartier.Universite) {
+                this.currentpoints = this.currentpoints + quartier.getPrice() + 2;
+            } else {
+                this.currentpoints = this.currentpoints + quartier.getPrice();
+            }
+        }
+        return currentpoints;
     }
 //    如果手中的牌全部建造的分数(不加已有分数)
     int countPotentialPoints(){
@@ -203,39 +215,7 @@ public abstract class Player {
         return total;
     }
 
-//  判断胜负 （全局判断应该写到Game里面）
-    Player getWinner(List<Player> players) {
-        int max = players.get(0).points;
-        int position = 0;
-        for (int m = 1; m < players.size(); m++) {
-            if (max < players.get(m).points) {
-                max = players.get(m).points;
-                position = m;
-            }
-        }
-        int same = 0;
-        //最多8个玩家
-        int[] location = new int[7];
-        for (int m = 0; m < players.size(); m++) {
-            if (players.get(m).points == max) {
-                location[same] = m;
-                same = same + 1;
 
-            }
-        }
-        if (same == 1) {
-            return players.get(position);
-        } else {
-            //如果有两个或以上相同最高分
-            for (int m : location) {
-                if (players.get(position).personnage.getNumber() < players.get(m).personnage.getNumber()) {
-                    //则赢家为角色number大的
-                    position = m;
-                }
-            }
-            return players.get(position);
-        }
-    }
 
     //刺客
     void action_assassin(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers, List<Player>otherPlayers){

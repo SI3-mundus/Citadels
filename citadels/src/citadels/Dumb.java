@@ -24,8 +24,8 @@ public class Dumb extends Player{
     void action(List<Quartiers.Quartier> quartiers, List<Player> otherPlayer){
 
         //1. 获取场上信息
-        countpoints();
-        int crntPoint = points; //分数
+        countcurrentpoints();
+        int crntPoint = currentpoints; //分数
         int crntMoney = argent; //金币
         int crntHandCards = availablenNumberofquartiersenmain(); //建筑手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数

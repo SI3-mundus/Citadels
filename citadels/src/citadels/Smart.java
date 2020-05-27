@@ -80,8 +80,8 @@ public class Smart extends Player{
     void action(List<Quartiers.Quartier> quartiers, List<Player> otherPlayer){
 
         //1. 获取场上信息
-        countpoints();
-        int crntPoint = points; //现有分数
+        countcurrentpoints();
+        int crntPoint = currentpoints; //现有分数
         int crntMoney = argent; //金币
         int crntHandCards = availablenNumberofquartiersenmain(); //手牌数
         int crntBuildings = quartierconstruit.size(); //已有建筑数
@@ -94,8 +94,8 @@ public class Smart extends Player{
 
             //找到最大分数值
         for (Player player: otherPlayer){
-            if( (player.countPotentialPoints() + player.points) > crntMaxTotalPoint ){
-                crntMaxTotalPoint = player.countPotentialPoints() + player.points;
+            if( (player.countPotentialPoints() + player.currentpoints) > crntMaxTotalPoint ){
+                crntMaxTotalPoint = player.countPotentialPoints() + player.currentpoints;
             }
         }
 

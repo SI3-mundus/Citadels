@@ -25,10 +25,14 @@ public class Game {
     Game(){
         this.playersnumber=4;
         getPersonnagesPourChoisir();
-        players.add(new Dumb(ListeDePersonagePourChoisir.get(0)));
-        players.add(new Dumb(ListeDePersonagePourChoisir.get(1)));
-        players.add(new Smart(ListeDePersonagePourChoisir.get(2)));
-        players.add(new Smart(ListeDePersonagePourChoisir.get(3)));
+        Dumb Dumb1=new Dumb(ListeDePersonagePourChoisir.get(0));
+        Dumb Dumb2=new Dumb(ListeDePersonagePourChoisir.get(1));
+        Smart Smart1=new Smart(ListeDePersonagePourChoisir.get(2));
+        Smart Smart2=new Smart(ListeDePersonagePourChoisir.get(3));
+        players.add(Dumb1);
+        players.add(Dumb2);
+        players.add(Smart1);
+        players.add(Smart2);
         players.get(0).isRoilasttour=true;
         quar.shuffle();
         for (Player player:players){
@@ -303,14 +307,15 @@ public class Game {
             getPersonnagesPourChoisir();
             choisirPersonnage();
             System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
+            int t=0;
             for (Player player:players){
-                System.out.println(player.personnage);
+                System.out.println("Joueur "+(++t)+": "+player.personnage);
             }
             oneTour();
             System.out.println("Les quartiers construit par chaque joueurs sont:");
+            int s= 0;
             for (Player player:players){
-                System.out.println("le nombre est:");
-                System.out.println(player.quartierconstruit.size());
+                System.out.println("Joueur "+(++s)+": "+player.quartierconstruit.size());
                 System.out.println("les quartiers sont:");
                 for (int i = 0; i < player.quartierconstruit.size(); i++) {
                     System.out.println(player.quartierconstruit.get(i));
@@ -321,10 +326,12 @@ public class Game {
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
                     finish=true;
+                    System.out.println("Game is over.");
                     break;
                 }
             }
         }
+
         for (Player player:players){
             System.out.println("the current point is");
             System.out.println(player.countpoints());
@@ -340,10 +347,45 @@ public class Game {
                 break;
             }
         }
-
-        Player Winner=players.get(0).getWinner(players);
-        System.out.println("le joueur gagne est:");
+        int win=getWinnerPosition();
+        Player Winner=players.get(win);
+        System.out.println("le joueur gagne est: Joueur " + (win+1));
         return Winner.personnage.getName();
+    }
+
+    //  判断胜负 （全局判断应该写到Game里面）
+    int getWinnerPosition() {
+        int max = players.get(0).points;
+        int position = 0;
+        for (int m = 1; m < players.size(); m++) {
+            if (max < players.get(m).points) {
+                max = players.get(m).points;
+                position = m;
+            }
+        }
+        int same = 0;
+        //最多8个玩家
+        int[] location = new int[7];
+        for (int m = 0; m < players.size(); m++) {
+            if (players.get(m).points == max) {
+                location[same] = m;
+                same = same + 1;
+
+            }
+        }
+        if (same == 1) {
+            return position;
+        } else {
+            //如果有两个或以上相同最高分
+            for (int m : location) {
+                if (players.get(position).personnage.getNumber() < players.get(m).personnage.getNumber()) {
+                    //则赢家为角色number大的
+                    position = m;
+                }
+            }
+
+            return position;
+        }
     }
 
     void addChooseList(){
