@@ -332,6 +332,15 @@ public class Game {
             }
         }
 
+
+        int win=getWinnerPosition();
+        Player Winner=players.get(win);
+        System.out.println("le joueur gagne est: Joueur " + (win+1));
+        return Winner.personnage.getName();
+    }
+
+    //  判断胜负 （全局判断应该写到Game里面）
+    int getWinnerPosition() {
         for (Player player:players){
             System.out.println("the current point is");
             System.out.println(player.countpoints());
@@ -347,14 +356,6 @@ public class Game {
                 break;
             }
         }
-        int win=getWinnerPosition();
-        Player Winner=players.get(win);
-        System.out.println("le joueur gagne est: Joueur " + (win+1));
-        return Winner.personnage.getName();
-    }
-
-    //  判断胜负 （全局判断应该写到Game里面）
-    int getWinnerPosition() {
         int max = players.get(0).points;
         int position = 0;
         for (int m = 0; m < players.size(); m++) {
