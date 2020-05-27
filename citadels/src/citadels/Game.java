@@ -318,8 +318,9 @@ public class Game {
                 System.out.println("Joueur "+(++s)+": "+player.quartierconstruit.size());
                 System.out.println("les quartiers sont:");
                 for (int i = 0; i < player.quartierconstruit.size(); i++) {
-                    System.out.println(player.quartierconstruit.get(i));
+                    System.out.print(player.quartierconstruit.get(i)+" ");
                 }
+                System.out.print("\n");
             }
            
             System.out.println("Tour "+round+" finish");
