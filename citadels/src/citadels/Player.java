@@ -5,6 +5,7 @@ import java.util.*;
 import static citadels.Quartiers.Quartier;
 
 public abstract class Player {
+
     Personnas.Personnage personnage;
     int argent;//钱
     int points;
@@ -32,6 +33,8 @@ public abstract class Player {
         }
         return isRoilasttour;
     }
+
+    Personnas.Personnage choisirSonPersonnage(List<Personnas.Personnage> list1){return this.personnage;}
 
 
     int countquartier() {
@@ -277,7 +280,7 @@ public abstract class Player {
     //魔法师
     void action_magicien(List<Personnas.Personnage> list1, List<Player> list2,List<Quartiers.Quartier> quartiers, List<Player>otherPlayers){
         List<Personnas.Personnage> lista=list1;
-        lista.remove(list1.indexOf(Personnas.Personnage.Magicien));
+        lista.remove(Personnas.Personnage.Magicien);
         Random random=new Random();
         int s = random.nextInt(2);
         if(s==0){
@@ -365,6 +368,11 @@ public abstract class Player {
         action(quartiers, otherPlayers);
 //        construitquartier();
         List<List<Quartiers.Quartier>> destroy=new ArrayList<>();
+        for (Quartiers.Quartier construit:this.quartierconstruit) {
+            if (construit.getCouleur() == "rouge") {
+                this.argent = this.argent + 1;
+            }
+        }
         for(Player p:list2){
             if(p.personnage!= Personnas.Personnage.Eveque){
                 destroy.add(p.quartierconstruit);

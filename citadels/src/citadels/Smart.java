@@ -1,13 +1,80 @@
 package citadels;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toMap;
+import static jdk.nashorn.internal.objects.NativeArray.sort;
 
 public class Smart extends Player{
     //  Smart 玩家：根据其他玩家的情况建造. 分已有的卡组颜色，计算总分，看自己的身份，主动建筑和被动建筑技能组合使用
     //  这个角色的倾向是让自己的现有分数和潜在分数的和(总分数)在全场最高
     Smart(Personnas.Personnage personage) {
         super(personage);
+    }
+    public Map<String,Integer> frequencyOfListElements() {
+        if (this.quartierconstruit == null || quartierconstruit.size() == 0) return null;
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for (Quartiers.Quartier temp : quartierconstruit) {
+            Integer count = map.get(temp);
+            map.put(temp.getCouleur(), (count == null) ? 1 : count + 1);
+        }
+        Map<String, Integer> sorted = map
+                .entrySet()
+                .stream()
+                .sorted(comparingByValue())
+                .collect(
+                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+                                LinkedHashMap::new));
+
+
+        return sorted;
+    }
+
+    @Override
+    Personnas.Personnage choisirSonPersonnage(List<Personnas.Personnage> list1){
+        Map<String,Integer> map=frequencyOfListElements();
+        if(map==null){
+            this.personnage=list1.get(0);
+            list1.remove(0);
+            return this.personnage;
+        }
+        for(String color: map.keySet()){
+            switch (color){
+                case "bleue":
+                    if(list1.contains(Personnas.Personnage.Eveque)){
+                        this.personnage= Personnas.Personnage.Eveque;
+                        list1.remove(Personnas.Personnage.Eveque);
+                        return personnage;
+                    }
+                    break;
+                case "rouge":
+                    if(list1.contains(Personnas.Personnage.Condottiere)){
+                        this.personnage= Personnas.Personnage.Condottiere;
+                        list1.remove(Personnas.Personnage.Condottiere);
+                        return personnage;
+                    }
+                    break;
+                case "jaune":
+                    if(list1.contains(Personnas.Personnage.Roi)){
+                        this.personnage= Personnas.Personnage.Roi;
+                        list1.remove(Personnas.Personnage.Roi);
+                        return personnage;
+                    }
+                    break;
+                case "vert":
+                    if(list1.contains(Personnas.Personnage.Marchand)){
+                        this.personnage= Personnas.Personnage.Marchand;
+                        list1.remove(Personnas.Personnage.Marchand);
+                        return personnage;
+                    }
+                    break;
+            }
+        }
+        this.personnage=list1.get(0);
+        list1.remove(0);
+        return this.personnage;
+
     }
     @Override
     void action(List<Quartiers.Quartier> quartiers, List<Player> otherPlayer){

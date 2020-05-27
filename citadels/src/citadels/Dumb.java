@@ -8,6 +8,18 @@ public class Dumb extends Player{
     Dumb(Personnas.Personnage personage) {
         super(personage);
     }
+
+    @Override
+    Personnas.Personnage choisirSonPersonnage(List<Personnas.Personnage> list1){
+        if(list1.contains(Personnas.Personnage.Roi)){
+            this.personnage= Personnas.Personnage.Roi;
+            list1.remove(Personnas.Personnage.Roi);
+        }else {
+            this.personnage=list1.get(0);
+            list1.remove(0);
+        }
+        return this.personnage;
+    }
     @Override
     void action(List<Quartiers.Quartier> quartiers, List<Player> otherPlayer){
 

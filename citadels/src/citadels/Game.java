@@ -110,15 +110,17 @@ public class Game {
             int a=0;
             for (int i=0;i<players.size();i++){
                 if(players.get(i).isRoilasttour==true){
-                    players.get(i).personnage=ListeDePersonagePourChoisir.get(0);
-                }else {a=a+1;}
-                break;
+                    players.get(i).choisirSonPersonnage(ListeDePersonagePourChoisir);
+                    break;
+                }else {
+                    a=a+1;
+                }
             }
-            int b=1;
+
             for (int i=0;i<players.size();i++){
                 if(i!=a){
-                    players.get(i).personnage=ListeDePersonagePourChoisir.get(b);
-                    b=b+1;
+                    players.get(i).choisirSonPersonnage(ListeDePersonagePourChoisir);
+
                 }
             }
             return players;
@@ -156,12 +158,7 @@ public class Game {
 //                            这里我想的话,玩家的决策应该写到玩家的类里面，这个Game只是控制游戏流程不应该统一所有玩家的行为
 //                            其实这个角色的技能也应该放到每个玩家的类里面，因为每个难度的玩家对每个角色的用法都不一样.
 
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n) == Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("l'assassin a commence son tour");
 
                             //传递场上其他玩家到action里做判断
@@ -174,30 +171,9 @@ public class Game {
                 case 2:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 2 && !player.isKilled) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
                             System.out.println("le voleur a commence son tour");
-<<<<<<< HEAD
 
-                            player.action_voleur(chooseList,players,quar.quartiers, getOtherPlayers(player));
-                            System.out.println("le voleur a fini son tour.");
-                            break;
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-                            player.isKilled=false;}
-=======
-                            List<Player> otherPlayers = new ArrayList<>();
-                            for (Player eachPlayer : players) {
-                                if (eachPlayer != player) {
-                                    otherPlayers.add(eachPlayer);
-                                }
-                            }
-//                            System.out.println("voleur fuck");
-                            player.action_voleur(chooseList, players, quar.quartiers, otherPlayers);
+                            player.action_voleur(chooseList, players, quar.quartiers, getOtherPlayers(player));
                             System.out.println("le voleur a fini son tour.");
                             break;
                         } else if (player.personnage.getNumber() == 2 && player.isKilled == true) {
@@ -205,149 +181,91 @@ public class Game {
                             player.isKilled = false;
                         }
                         break;
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                     }
                 case 3:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 3 && !player.isKilled) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("le magicien a commence son tour");
 
                             player.action_magicien(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le magicien a fini son tour");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
                         }else if (player.personnage.getNumber() == 3 && player.isKilled == true){
                             System.out.println("le magicien a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
                 case 4:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 4 && player.isKilled != true) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("le roi a commence son tour");
 
                             player.action_roi(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le roi a fini son tour.");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
                         }else if (player.personnage.getNumber() == 4 && player.isKilled == true){
                             System.out.println("le roi a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
                 case 5:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 5 && player.isKilled != true) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("l'eveque a commence son tour");
 
                             player.action_eveque(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("l'eveque a fini son tour.");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
                         }else if (player.personnage.getNumber() == 5 && player.isKilled == true){
                             System.out.println("l'eveque a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
                 case 6:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 6 && player.isKilled != true) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("le marchant a commence son tour");
 
                             player.action_marchant(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le marchant a fini son tour.");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
+
                         }else if (player.personnage.getNumber() == 6 && player.isKilled == true){
                             System.out.println("le marchant a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
                 case 7:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 7 && player.isKilled != true) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("l'architect a commence son tour");
 
                             player.action_architect(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("l'architect a fini son tour");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
                         }else if (player.personnage.getNumber() == 7 && player.isKilled == true){
                             System.out.println("l'architect' a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
+
                             player.isKilled=false;}
                     }
                     break;
                 case 8:
                     for (Player player : players) {
                         if (player.personnage.getNumber() == 8 && player.isKilled != true) {
-//                            for (int n=0;n<player.quartierconstruit.size();n++){
-//                                if (player.quartierconstruit.get(n)== Quartiers.Quartier.Laboratoire){
-//                                    player.quartierenmain.remove(0);
-//                                    player.argent ++;
-//                                }
-//                            }
+
                             System.out.println("le cordittiere a commence son tour");
 
                             player.action_condottiere(chooseList,players,quar.quartiers, getOtherPlayers(player));
                             System.out.println("le condottiere a fini son tour");
                             break;
-<<<<<<< HEAD
-                        }else if(player.isKilled){
-                            System.out.println("Il a ete tue");
-=======
+
                         }else if (player.personnage.getNumber() == 8 && player.isKilled == true){
                             System.out.println("le condottiere a ete tue");
->>>>>>> c5505a1f247b0131db9fe0e9a70da43a602851ca
                             player.isKilled=false;}
                     }
                     break;
