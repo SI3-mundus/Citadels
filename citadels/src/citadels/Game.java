@@ -357,7 +357,7 @@ public class Game {
     int getWinnerPosition() {
         int max = players.get(0).points;
         int position = 0;
-        for (int m = 1; m < players.size(); m++) {
+        for (int m = 0; m < players.size(); m++) {
             if (max < players.get(m).points) {
                 max = players.get(m).points;
                 position = m;
