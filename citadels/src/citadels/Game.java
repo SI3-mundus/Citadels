@@ -371,16 +371,16 @@ public class Game {
                 System.out.println(player.personnage);
             }
             oneTour();
-            System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
+            System.out.println("Les quartiers construit par chaque joueurs sont:");
             for (Player player:players){
+                System.out.println("le nombre est:");
                 System.out.println(player.quartierconstruit.size());
-            }
-            System.out.println("les quartiers que chaqun a construit est:");
-            for (Player player:players) {
+                System.out.println("les quartiers sont:")
                 for (int i = 0; i < player.quartierconstruit.size(); i++) {
                     System.out.println(player.quartierconstruit.get(i));
                 }
             }
+           
             System.out.println("Tour "+round+" finish");
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
