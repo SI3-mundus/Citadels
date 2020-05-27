@@ -7,10 +7,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class  PlayerTest {
-    private static final Dumb dumb1= new Dumb(Personnas.Personnage.Assassin);
-    private static final Dumb dumb2= new Dumb(Personnas.Personnage.Roi);
-    private static final Smart smart1= new Smart(Personnas.Personnage.Magicien);
-    private static final Smart smart2= new Smart(Personnas.Personnage.Marchand);
+    private Dumb dumb1= new Dumb(Personnas.Personnage.Assassin);
+    private Dumb dumb2= new Dumb(Personnas.Personnage.Roi);
+    private Smart smart1= new Smart(Personnas.Personnage.Magicien);
+    private Smart smart2= new Smart(Personnas.Personnage.Marchand);
     private static final Quartiers.Quartier taverne= Quartiers.Quartier.Taverne;
     private static final Quartiers.Quartier marche= Quartiers.Quartier.Marche;
     private static final Quartiers.Quartier caserne= Quartiers.Quartier.Caserne;
@@ -21,9 +21,15 @@ public class  PlayerTest {
     private static final Quartiers.Quartier chateau = Quartiers.Quartier.Chateau;
     private static final Quartiers.Quartier cathedrale = Quartiers.Quartier.Cathedrale;
     private Quartiers q;
+    List<Personnas.Personnage> list1=new ArrayList<>();
+
+
+
+
 
     @Test
     void constructor() {
+
         assertAll(
                 () -> assertNotNull(dumb1),
                 () -> assertNotNull(dumb2),
@@ -93,6 +99,62 @@ public class  PlayerTest {
         smart2.quartierconstruit.add(cathedrale);
         assertTrue(smart2.availablenNumberofquartiersenmain()==1);
     }
-
+    @Test
+    void dumbChoice(){
+        list1.add(Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Architecte);
+        dumb1.choisirSonPersonnage(list1);
+        assertTrue(dumb1.personnage== Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Roi);
+        dumb1.choisirSonPersonnage(list1);
+        assertTrue(dumb1.personnage== Personnas.Personnage.Roi);
+    }
+    @Test
+    void smartChoice1(){
+        list1.add(Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Marchand);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Eveque);
+        smart1.quartierconstruit.add(taverne);
+        smart1.quartierconstruit.add(marche);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Marchand);
+    }
+    @Test
+    void smartChoice2(){
+        list1.add(Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Marchand);
+        list1.add(Personnas.Personnage.Roi);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Eveque);
+        smart1.quartierconstruit.add(palais);
+        smart1.quartierconstruit.add(chateau);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Roi);
+    }
+    @Test
+    void smartChoice3(){
+        list1.add(Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Marchand);
+        list1.add(Personnas.Personnage.Roi);
+        list1.add(Personnas.Personnage.Condottiere);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Eveque);
+        smart1.quartierconstruit.add(caserne);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Condottiere);
+    }
+    @Test
+    void smartChoice4(){
+        list1.add(Personnas.Personnage.Marchand);
+        list1.add(Personnas.Personnage.Roi);
+        list1.add(Personnas.Personnage.Eveque);
+        list1.add(Personnas.Personnage.Condottiere);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Marchand);
+        smart1.quartierconstruit.add(eglise);
+        smart1.choisirSonPersonnage(list1);
+        assertTrue(smart1.personnage== Personnas.Personnage.Eveque);
+}
 
 }
