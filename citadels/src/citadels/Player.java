@@ -331,11 +331,13 @@ public abstract class Player {
         //在action里面包含了一次带决策的建造，这里就把范围改到了 0 ~ 2
         int n = random.nextInt(3);
         action(quartiers, otherPlayers);
-        if(m==0){
-            this.quartierenmain.add(quartiers.get(0));
-            quartiers.remove(0);
-            this.quartierenmain.add(quartiers.get(0));
-            quartiers.remove(0);
+        if(quartiers.size()>0) {
+            if (m == 0) {
+                this.quartierenmain.add(quartiers.get(0));
+                quartiers.remove(0);
+                this.quartierenmain.add(quartiers.get(0));
+                quartiers.remove(0);
+            }
         }
         //这里玩家不能选择建造的建筑数
         for(int i=0;i<n;i++){
