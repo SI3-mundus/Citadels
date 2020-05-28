@@ -5,14 +5,14 @@ import java.util.*;
 
 public class Game {
     List<Player> players = new ArrayList<>();
-    private Quartiers quar=new Quartiers();
-    private int round=1;
-    private boolean finish=false;
+    Quartiers quar=new Quartiers();
+    int round=1;
+    boolean finish=false;
     List<Quartiers.Quartier> giveUpQuartiers=new ArrayList<>();
-    private List<Personnas.Personnage> ListeDePersonagePourChoisir=new ArrayList<>();
+    List<Personnas.Personnage> ListeDePersonagePourChoisir=new ArrayList<>();
     List<Personnas.Personnage> visiblePersonage=new ArrayList<>();
     List<Personnas.Personnage> invisiblePersonage=new ArrayList<>();
-    private List<Personnas.Personnage> chooseList=new ArrayList<>();
+    List<Personnas.Personnage> chooseList=new ArrayList<>();
     int playersnumber;
 
     //  Main()
@@ -115,27 +115,22 @@ public class Game {
     }
 
     //分配角色,从上一轮的roi开始选
-    List<Player> choisirPersonnage(){
-        if(players.size()<ListeDePersonagePourChoisir.size()){
-            int a=0;
-            for (Player player : players) {
-                if (player.isRoilasttour) {
-                    player.choisirSonPersonnage(ListeDePersonagePourChoisir);
-                    break;
-                } else {
-                    a = a + 1;
-                }
-            }
-
-            for (int i=0;i<players.size();i++){
-                if(i!=a){
+    void choisirPersonnage(){
+        if(players.size()<ListeDePersonagePourChoisir.size()) {
+            for (int i = 0; i < players.size(); i++) {
+                if (players.get(i).isRoilasttour) {
+                    System.out.println("Joueur " + i + " est le veux Roi, il choisi au premieur.");
                     players.get(i).choisirSonPersonnage(ListeDePersonagePourChoisir);
+                    break;
+                }
+            }
+
+            for (Player player : players) {
+                if (!player.isRoilasttour) {
+                    player.choisirSonPersonnage(ListeDePersonagePourChoisir);
 
                 }
             }
-            return players;
-        }else {
-            return null;
         }
     }
 
@@ -166,19 +161,7 @@ public class Game {
         return otherPlayers;
     }
 
-    void oneTour(){
-        System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
-        int i = 0;
-        for (Player player:players){
-//                玩家选择了这些角色（按顺序列出）
-            System.out.println("Joueur "+(++i)+": "+player.personnage);
-        }
-        for (int j=1;j<9;j++) {
-            callPersonnage(j);
-        }
-        showQuartiersConstruits();
-        System.out.println("Tour "+round+" finish");
-    }
+
     //一个游戏回合,依角色顺序循环
     void callPersonnage(int i){
             switch (i) {
@@ -224,7 +207,8 @@ public class Game {
                             break;
                         }else if (player.personnage.getNumber() == 3 && player.isKilled == true){
                             System.out.println("le magicien a ete tue");
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 case 4:
@@ -238,7 +222,8 @@ public class Game {
                             break;
                         }else if (player.personnage.getNumber() == 4 && player.isKilled == true){
                             System.out.println("le roi a ete tue");
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 case 5:
@@ -252,7 +237,8 @@ public class Game {
                             break;
                         }else if (player.personnage.getNumber() == 5 && player.isKilled == true){
                             System.out.println("l'eveque a ete tue");
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 case 6:
@@ -267,7 +253,8 @@ public class Game {
 
                         }else if (player.personnage.getNumber() == 6 && player.isKilled == true){
                             System.out.println("le marchant a ete tue");
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 case 7:
@@ -282,7 +269,8 @@ public class Game {
                         }else if (player.personnage.getNumber() == 7 && player.isKilled == true){
                             System.out.println("l'architect' a ete tue");
 
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 case 8:
@@ -297,7 +285,8 @@ public class Game {
 
                         }else if (player.personnage.getNumber() == 8 && player.isKilled == true){
                             System.out.println("le condottiere a ete tue");
-                            player.isKilled=false;}
+                            player.isKilled=false;
+                        }
                     }
                     break;
                 default:
@@ -306,34 +295,18 @@ public class Game {
 
     }
 
-
-    String play(){
-        if(round==1){
-            System.out.println("Game Start");
-            System.out.println("Les quatre jouers sont Dumb1, Dumb2, Smart1 et Smart2");
-            oneTour();
+    void oneTour(){
+        System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
+        int i = 0;
+        for (Player player:players){
+//                玩家选择了这些角色（按顺序列出）
+            System.out.println("Joueur "+(++i)+": "+player.personnage);
         }
-        while (!finish){
-
-            round=round+1;
-            System.out.println("Tour "+round+" start");
-            deciderquiRoi();
-            getPersonnagesPourChoisir();
-            choisirPersonnage();
-            oneTour();
-            for (Player player:players){
-                if (player.quartierconstruit.size()==7){
-                    finish=true;
-                    System.out.println("Game is over.");
-                    break;
-                }
-            }
+        for (int j=1;j<9;j++) {
+            callPersonnage(j);
         }
-
-        int win=getWinnerPosition();
-        Player Winner=players.get(win);
-        System.out.println("le joueur gagne est: Joueur " + (win+1));
-        return Winner.personnage.getName();
+        showQuartiersConstruits();
+        System.out.println("Tour "+round+" finish");
     }
 
     //  判断胜负 （全局判断应该写到Game里面）
@@ -369,6 +342,38 @@ public class Game {
 
         return position;
     }
+
+
+    String play(){
+        if(round==1){
+            System.out.println("Game Start");
+            System.out.println("Les quatre jouers sont Dumb1, Dumb2, Smart1 et Smart2");
+            System.out.println("Tour "+round+" start");
+            oneTour();
+        }
+        while (!finish){
+
+            round=round+1;
+            System.out.println("Tour "+round+" start");
+            deciderquiRoi();
+            getPersonnagesPourChoisir();
+            choisirPersonnage();
+            oneTour();
+            for (Player player:players){
+                if (player.quartierconstruit.size()==7){
+                    finish=true;
+                    System.out.println("Game is over.");
+                    break;
+                }
+            }
+        }
+
+        int win=getWinnerPosition();
+        Player Winner=players.get(win);
+        System.out.println("le joueur gagne est: Joueur " + (win+1));
+        return Winner.personnage.getName();
+    }
+
 
 
 
