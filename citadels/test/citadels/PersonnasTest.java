@@ -55,12 +55,19 @@ public class PersonnasTest{
     void TakeAway(){
         person.takeAway(2);
         Personnas person1 = new Personnas();
-
         assertAll(
         ()->assertEquals(6,person.personnas.size()),
         ()->assertEquals(person1.personnas.subList(2,8),person.personnas)
         );
-
-
+        person.takeAway(3);
+        assertAll(
+                ()->assertEquals(3,person.personnas.size()),
+                ()->assertEquals(person1.personnas.subList(5,8),person.personnas)
+        );
+        person.takeAway(2);
+        assertAll(
+                ()->assertEquals(1,person.personnas.size()),
+                ()->assertEquals(person1.personnas.subList(7,8),person.personnas)
+        );
     }
 }
