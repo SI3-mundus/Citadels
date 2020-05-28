@@ -54,9 +54,13 @@ public class PersonnasTest{
     @Test
     void TakeAway(){
         person.takeAway(2);
+        Personnas person1 = new Personnas();
+
         assertAll(
         ()->assertEquals(6,person.personnas.size()),
-        ()->assertTrue(Magicien.equals(person.personnas.get(0)))
+        ()->assertEquals(person1.personnas.subList(2,8),person.personnas)
         );
+
+
     }
 }
