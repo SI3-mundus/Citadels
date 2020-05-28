@@ -167,7 +167,7 @@ public abstract class Player {
                 if (this.argent >= quartierenmain.get(i).getPrice()) {
                     this.argent = this.argent - quartierenmain.get(i).getPrice();
                     quartierconstruit.add(quartierenmain.get(i));
-                    System.out.println("the player chose to build this quartier:" + quartierenmain.get(i));
+                    System.out.println("il a construit le quartier:" + quartierenmain.get(i));
                     quartierenmain.remove(i);
                     return;
                 }

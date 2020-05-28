@@ -5,14 +5,14 @@ import java.util.*;
 
 public class Game {
     List<Player> players = new ArrayList<>();
-    Quartiers quar=new Quartiers();
-    int round=1;
-    boolean finish=false;
+    private Quartiers quar=new Quartiers();
+    private int round=1;
+    private boolean finish=false;
     List<Quartiers.Quartier> giveUpQuartiers=new ArrayList<>();
-    List<Personnas.Personnage> ListeDePersonagePourChoisir=new ArrayList<>();
+    private List<Personnas.Personnage> ListeDePersonagePourChoisir=new ArrayList<>();
     List<Personnas.Personnage> visiblePersonage=new ArrayList<>();
     List<Personnas.Personnage> invisiblePersonage=new ArrayList<>();
-    List<Personnas.Personnage> chooseList=new ArrayList<>();
+    private List<Personnas.Personnage> chooseList=new ArrayList<>();
     int playersnumber;
 
     //  Main()
@@ -45,12 +45,18 @@ public class Game {
         }
 
     }
+
+    void addChooseList(){
+        chooseList.addAll(invisiblePersonage);
+        chooseList.addAll(ListeDePersonagePourChoisir);
+    }
+
     //国王是否可见
     boolean isRoisvisible(){
         boolean visible=false;
-        for(int i=0;i<visiblePersonage.size();i++){
-            if(visiblePersonage.get(i)== Personnas.Personnage.Roi){
-                visible=true;
+        for (Personnas.Personnage personnage : visiblePersonage) {
+            if (personnage == Personnas.Personnage.Roi) {
+                visible = true;
                 break;
             }
         }
@@ -112,12 +118,12 @@ public class Game {
     List<Player> choisirPersonnage(){
         if(players.size()<ListeDePersonagePourChoisir.size()){
             int a=0;
-            for (int i=0;i<players.size();i++){
-                if(players.get(i).isRoilasttour==true){
-                    players.get(i).choisirSonPersonnage(ListeDePersonagePourChoisir);
+            for (Player player : players) {
+                if (player.isRoilasttour) {
+                    player.choisirSonPersonnage(ListeDePersonagePourChoisir);
                     break;
-                }else {
-                    a=a+1;
+                } else {
+                    a = a + 1;
                 }
             }
 
@@ -135,9 +141,18 @@ public class Game {
 
 
 
-    void oneTour(){
-        for (int i=1;i<9;i++) {
-            callPersonnage(i);
+
+
+    void showQuartiersConstruits(){
+        System.out.println("Les quartiers construit par chaque joueurs sont:");
+        int s= 0;
+        for (Player player:players){
+            System.out.println("Joueur "+(++s)+": "+player.quartierconstruit.size());
+            System.out.println("les quartiers sont:");
+            for (int i = 0; i < player.quartierconstruit.size(); i++) {
+                System.out.print(player.quartierconstruit.get(i)+" ");
+            }
+            System.out.print("\n");
         }
     }
 
@@ -151,7 +166,19 @@ public class Game {
         return otherPlayers;
     }
 
-
+    void oneTour(){
+        System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
+        int i = 0;
+        for (Player player:players){
+//                玩家选择了这些角色（按顺序列出）
+            System.out.println("Joueur "+(++i)+": "+player.personnage);
+        }
+        for (int j=1;j<9;j++) {
+            callPersonnage(j);
+        }
+        showQuartiersConstruits();
+        System.out.println("Tour "+round+" finish");
+    }
     //一个游戏回合,依角色顺序循环
     void callPersonnage(int i){
             switch (i) {
@@ -284,20 +311,7 @@ public class Game {
         if(round==1){
             System.out.println("Game Start");
             System.out.println("Les quatre jouers sont Dumb1, Dumb2, Smart1 et Smart2");
-            System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
-            int i = 0;
-            for (Player player:players){
-//                玩家选择了这些角色（按顺序列出）
-                System.out.println("Joueur "+(++i)+": "+player.personnage);
-            }
             oneTour();
-            System.out.println("Le nombre de quartiers construit par chaque joueurs est:");
-            i = 0;
-            for (Player player:players){
-//                每个玩家建造的建筑数量
-                System.out.println("Joueur "+(++i)+": "+player.quartierconstruit.size());
-            }
-            System.out.println("Tour "+round+" finish");
         }
         while (!finish){
 
@@ -306,24 +320,7 @@ public class Game {
             deciderquiRoi();
             getPersonnagesPourChoisir();
             choisirPersonnage();
-            System.out.println("les joueurs ont choisi ces personages(liste en ordre):" );
-            int t=0;
-            for (Player player:players){
-                System.out.println("Joueur "+(++t)+": "+player.personnage);
-            }
             oneTour();
-            System.out.println("Les quartiers construit par chaque joueurs sont:");
-            int s= 0;
-            for (Player player:players){
-                System.out.println("Joueur "+(++s)+": "+player.quartierconstruit.size());
-                System.out.println("les quartiers sont:");
-                for (int i = 0; i < player.quartierconstruit.size(); i++) {
-                    System.out.print(player.quartierconstruit.get(i)+" ");
-                }
-                System.out.print("\n");
-            }
-           
-            System.out.println("Tour "+round+" finish");
             for (Player player:players){
                 if (player.quartierconstruit.size()==7){
                     finish=true;
@@ -332,7 +329,6 @@ public class Game {
                 }
             }
         }
-
 
         int win=getWinnerPosition();
         Player Winner=players.get(win);
@@ -374,14 +370,7 @@ public class Game {
         return position;
     }
 
-    void addChooseList(){
-        for (Personnas.Personnage p:invisiblePersonage){
-            chooseList.add(p);
-        }
-        for (Personnas.Personnage p:ListeDePersonagePourChoisir){
-            chooseList.add(p);
-        }
-    }
+
 
 
 
